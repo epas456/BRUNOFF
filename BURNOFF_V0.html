@@ -99,6 +99,8 @@ input,textarea{font-family:'Inter',sans-serif}
 .demo-creds-title{font-size:10px;font-weight:500;color:var(--ink3);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px}
 .demo-cred{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink2);margin-bottom:4px}
 .demo-cred span{color:var(--ink3)}
+.demo-cred-btn{cursor:pointer;padding:4px 6px;border-radius:4px;margin-bottom:4px;transition:background 150ms}
+.demo-cred-btn:hover{background:var(--cobalt-light);color:var(--cobalt)}
 
 /* ── APP SHELL ── */
 #screen-app{flex-direction:column;min-height:100vh}
@@ -577,9 +579,9 @@ tbody tr:hover{background:var(--cobalt-light)}
     <button class="btn-primary" id="login-btn" disabled onclick="doLogin()">Entrar →</button>
     <div class="login-disclaimer">Tus datos nunca son vistos individualmente por tu empresa.</div>
     <div class="demo-creds">
-      <div class="demo-creds-title">Credenciales demo</div>
-      <div class="demo-cred"><span>CEO:</span> sandra@empresa.com / cualquier contraseña</div>
-      <div class="demo-cred"><span>Empleado:</span> juan@empresa.com / cualquier contraseña</div>
+      <div class="demo-creds-title">Credenciales demo · click para rellenar</div>
+      <div class="demo-cred demo-cred-btn" onclick="fillDemo('ceo')" title="Click para usar estas credenciales"><span>CEO:</span> sandra@empresa.com / cualquier contraseña</div>
+      <div class="demo-cred demo-cred-btn" onclick="fillDemo('empleado')" title="Click para usar estas credenciales"><span>Empleado:</span> juan@empresa.com / cualquier contraseña</div>
     </div>
   </div>
 </div>
@@ -1676,7 +1678,21 @@ function empViewMisDatos() {
   </div>`;
 }
 
-// end of script
+// ═══════════════════════════════════════════════════
+// DEMO INIT — pre-rellena credenciales y activa el botón al cargar
+// ═══════════════════════════════════════════════════
+function fillDemo(role) {
+  selectRole(role);
+  document.getElementById('gdpr1').checked = true;
+  document.getElementById('gdpr2').checked = true;
+  document.getElementById('login-pass').value = 'demo1234';
+  updateLoginBtn();
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Pre-selecciona CEO y rellena el form para que el demo sea usable de inmediato
+  fillDemo('ceo');
+});
 </script>
 </body>
 </html>
