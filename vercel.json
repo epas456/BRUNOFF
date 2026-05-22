@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/BURNOFF_V0.html" }
+  ]
+}
