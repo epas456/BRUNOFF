@@ -509,6 +509,87 @@ tbody tr:hover{background:var(--cobalt-light)}
   .dashboard-grid{grid-template-columns:1fr}
   .topbar-search{max-width:360px}
 }
+
+/* ── ACTOR BADGES ── */
+.actor-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:100px;font-size:10px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;margin-right:4px}
+.actor-ia{background:#EEF2FD;color:#2A4FD6}
+.actor-empresa{background:#F5F5F2;color:#3D4552;border:1px solid rgba(15,20,25,0.12)}
+.actor-trabajador{background:#EDF5F0;color:#6BAA82}
+
+/* ── ACTION TYPE BADGES ── */
+.type-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:100px;font-size:10px;font-weight:500;margin-right:4px}
+.type-auto{background:#EDF5F0;color:#6BAA82}
+.type-supervised{background:#FBF4E7;color:#D4A04E}
+
+/* ── SIGNAL ORIGIN ── */
+.origin-badge{font-size:10px;padding:1px 6px;border-radius:100px;font-weight:500;background:var(--bg);color:var(--ink3);border:1px solid var(--border);margin-left:6px;white-space:nowrap}
+
+/* ── RESPONSIBILITY ROW ── */
+.action-responsibility{font-size:11px;color:var(--ink3);padding:8px 10px;background:var(--bg);border-radius:var(--r);border:1px solid var(--border);margin-bottom:10px;display:flex;gap:16px;flex-wrap:wrap}
+.resp-label{font-weight:600;color:var(--ink2)}
+
+/* ── ACTION TRACKER ── */
+.action-tracker{display:flex;gap:4px;margin-top:8px;flex-wrap:wrap}
+.tracker-btn{padding:5px 10px;border-radius:var(--r);font-size:11px;font-weight:500;cursor:pointer;border:1px solid var(--border-md);color:var(--ink3);background:var(--surface);transition:all 100ms}
+.tracker-btn.t-active-planned{background:#EEF2FD;color:#2A4FD6;border-color:#2A4FD6}
+.tracker-btn.t-active-inprogress{background:#FBF4E7;color:#D4A04E;border-color:#D4A04E}
+.tracker-btn.t-active-done{background:#EDF5F0;color:#6BAA82;border-color:#6BAA82}
+.tracker-btn.t-active-notdone{background:#FAF0EC;color:#C7654A;border-color:#C7654A}
+
+/* ── QUICK RATE ── */
+.quick-rate-btn{padding:10px 20px;border-radius:var(--r);font-size:13px;font-weight:600;cursor:pointer;border:2px solid var(--border-md);background:var(--surface);transition:all 150ms}
+.quick-green{border-color:var(--green)}
+.quick-green.qsel,.quick-green:hover{background:var(--green-light);color:var(--green);border-color:var(--green)}
+.quick-amber{border-color:var(--amber)}
+.quick-amber.qsel,.quick-amber:hover{background:var(--amber-light);color:var(--amber);border-color:var(--amber)}
+.quick-red{border-color:var(--terra)}
+.quick-red.qsel,.quick-red:hover{background:var(--terra-light);color:var(--terra);border-color:var(--terra)}
+
+/* ── HEATMAP ── */
+.heatmap-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:8px}
+.heatmap-cell{padding:14px 10px;border-radius:var(--r-lg);display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:transform 150ms,box-shadow 150ms;text-align:center}
+.heatmap-cell:hover{transform:scale(1.04);box-shadow:0 6px 20px rgba(15,20,25,0.1)}
+.heatmap-green{background:var(--green-light);border:2px solid var(--green)}
+.heatmap-amber{background:var(--amber-light);border:2px solid var(--amber)}
+.heatmap-red{background:var(--terra-light);border:2px solid var(--terra)}
+.heatmap-name{font-size:11px;font-weight:600;color:var(--ink);margin-bottom:4px}
+.heatmap-index{font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:400;color:var(--ink)}
+.heatmap-zone{font-size:10px;color:var(--ink3);margin-top:2px}
+
+/* ── HISTORY LEGEND ── */
+.history-legend{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:12px}
+.history-legend-item{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--ink2)}
+.history-legend-line{width:16px;height:3px;border-radius:100px}
+
+/* ── FORMATION CARDS ── */
+.formation-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:20px;margin-bottom:12px;transition:box-shadow 150ms}
+.formation-card:hover{box-shadow:0 4px 16px rgba(15,20,25,0.07)}
+.formation-num{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--ink4);margin-bottom:6px}
+.formation-title{font-size:15px;font-weight:600;color:var(--ink);letter-spacing:-0.01em;margin-bottom:8px}
+.formation-desc{font-size:13px;color:var(--ink2);line-height:1.6;margin-bottom:14px}
+
+/* ── CONFIG ── */
+.config-section{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:20px;margin-bottom:16px}
+.config-title{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:14px}
+.company-type-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.company-type-card{padding:12px 8px;border:1.5px solid var(--border-md);border-radius:var(--r);cursor:pointer;text-align:center;transition:all 150ms;background:#fff}
+.company-type-card.selected{border-color:var(--cobalt);background:var(--cobalt-light)}
+.company-type-card:hover:not(.selected){border-color:var(--cobalt-mid)}
+.company-type-emoji{font-size:20px;display:block;margin-bottom:4px}
+.company-type-name{font-size:11px;font-weight:500;color:var(--ink2)}
+.threshold-row{display:flex;align-items:center;gap:10px;margin-bottom:10px;font-size:13px;color:var(--ink2)}
+.threshold-input{width:58px;padding:6px 8px;border:1px solid var(--border-md);border-radius:var(--r);font-size:13px;font-family:'JetBrains Mono',monospace;font-weight:500;text-align:center;outline:none}
+.threshold-input:focus{border-color:var(--cobalt)}
+.upload-area{border:2px dashed var(--border-md);border-radius:var(--r-lg);padding:28px;text-align:center;cursor:pointer;transition:all 150ms}
+.upload-area:hover{border-color:var(--cobalt);background:var(--cobalt-light)}
+
+/* ── BOLSA HORAS ── */
+.bolsa-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:20px;margin-bottom:16px}
+.bolsa-balance{display:flex;gap:0;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--border);margin-bottom:16px}
+.bolsa-bal-item{flex:1;padding:16px;text-align:center;border-right:1px solid var(--border)}
+.bolsa-bal-item:last-child{border-right:none}
+.bolsa-bal-val{font-size:22px;font-weight:300;color:var(--ink);letter-spacing:-0.02em}
+.bolsa-bal-label{font-size:11px;color:var(--ink3);margin-top:2px}
 </style>
 </head>
 <body>
@@ -685,7 +766,10 @@ const ceoViews = [
   { id:'dashboard',    icon:'●', label:'Dashboard',        section:'PRINCIPAL' },
   { id:'equipos',      icon:'≡', label:'Equipos',          section:null },
   { id:'acciones',     icon:'⚡', label:'Acciones IA',      section:null },
+  { id:'historico',    icon:'📊', label:'Histórico',        section:'ANÁLISIS' },
+  { id:'absentismo',   icon:'📅', label:'Absentismo',       section:null },
   { id:'integraciones',icon:'⟳', label:'Integraciones',   section:'CONFIGURACIÓN' },
+  { id:'configuracion',icon:'⚙️', label:'Configuración',   section:null },
   { id:'privacidad',   icon:'🔒', label:'Privacidad & RGPD',section:null },
 ];
 
@@ -700,7 +784,9 @@ const empViews = [
   { id:'tendencia',    icon:'📈', label:'Mi tendencia',     section:null },
   { id:'sugerencias',  icon:'💡', label:'Sugerencias IA',  section:null },
   { id:'calendario',   icon:'📅', label:'Mi calendario',   section:null },
-  { id:'misdatos',     icon:'🔒', label:'Mis datos',        section:null },
+  { id:'bolsahoras',   icon:'🕐', label:'Bolsa de horas',  section:'FLEXIBILIDAD' },
+  { id:'formacion',    icon:'🎓', label:'Formación',        section:null },
+  { id:'misdatos',     icon:'🔒', label:'Mis datos',        section:'PRIVACIDAD' },
 ];
 
 function buildEmployeeApp() {
@@ -764,7 +850,10 @@ function renderCEOView(viewId) {
   if (viewId === 'dashboard')    mc.innerHTML = ceoViewDashboard();
   else if (viewId === 'equipos') mc.innerHTML = ceoViewEquipos();
   else if (viewId === 'acciones') mc.innerHTML = ceoViewAcciones();
+  else if (viewId === 'historico') mc.innerHTML = ceoViewHistorico();
+  else if (viewId === 'absentismo') mc.innerHTML = ceoViewAbsentismo();
   else if (viewId === 'integraciones') mc.innerHTML = ceoViewIntegraciones();
+  else if (viewId === 'configuracion') mc.innerHTML = ceoViewConfiguracion();
   else if (viewId === 'privacidad') mc.innerHTML = ceoViewPrivacidad();
   attachCEOEvents(viewId);
 }
@@ -785,12 +874,12 @@ function ceoViewDashboard() {
       <div class="kpi-trend trend-down">↓ <span>-3 esta semana</span></div>
     </div>
     <div class="kpi-card">
-      <div class="kpi-label">Empleados en Zona Ámbar</div>
+      <div class="kpi-label">Empleados en Atención ⚠️</div>
       <div class="kpi-value">12</div>
       <div class="kpi-trend trend-up">↑ <span>+4 vs mes anterior</span></div>
     </div>
     <div class="kpi-card">
-      <div class="kpi-label">Empleados en Zona Roja</div>
+      <div class="kpi-label">Situación Crítica 🚨</div>
       <div class="kpi-value">3</div>
       <div class="kpi-trend trend-warn">— <span>nuevo este mes</span></div>
     </div>
@@ -801,6 +890,39 @@ function ceoViewDashboard() {
     </div>
   </div>
 
+  <!-- HEAT MAP SEMÁFORO -->
+  <div class="chart-card" style="margin-bottom:20px">
+    <div class="chart-card-title">Semáforo de equipos · Vista rápida</div>
+    <div class="heatmap-grid">
+      <div class="heatmap-cell heatmap-amber" onclick="goToTeam(0)">
+        <div class="heatmap-name">Producto &amp; Tech</div>
+        <div class="heatmap-index">61</div>
+        <div class="heatmap-zone">⚠️ Atención</div>
+      </div>
+      <div class="heatmap-cell heatmap-green" onclick="goToTeam(1)">
+        <div class="heatmap-name">Ventas</div>
+        <div class="heatmap-index">74</div>
+        <div class="heatmap-zone">🌿 Bienestar</div>
+      </div>
+      <div class="heatmap-cell heatmap-red" onclick="goToTeam(2)">
+        <div class="heatmap-name">Operaciones</div>
+        <div class="heatmap-index">48</div>
+        <div class="heatmap-zone">🚨 Situación Crítica</div>
+      </div>
+      <div class="heatmap-cell heatmap-green" onclick="goToTeam(3)">
+        <div class="heatmap-name">Marketing</div>
+        <div class="heatmap-index">82</div>
+        <div class="heatmap-zone">🌿 Bienestar</div>
+      </div>
+      <div class="heatmap-cell heatmap-amber" onclick="goToTeam(4)">
+        <div class="heatmap-name">Soporte</div>
+        <div class="heatmap-index">66</div>
+        <div class="heatmap-zone">⚠️ Atención</div>
+      </div>
+    </div>
+    <div style="font-size:11px;color:var(--ink3);margin-top:4px">💡 Haz clic en un equipo para ver el detalle. 🌿 Sin acción necesaria · ⚠️/🚨 Requieren intervención.</div>
+  </div>
+
   <div class="dashboard-grid">
     <div class="dashboard-main">
       <!-- DONUT -->
@@ -809,15 +931,12 @@ function ceoViewDashboard() {
         <div class="donut-wrap">
           <svg width="130" height="130" viewBox="0 0 130 130">
             <circle cx="65" cy="65" r="50" fill="none" stroke="#F5F5F2" stroke-width="18"/>
-            <!-- Green 83% = 314px of 314 circumference -->
             <circle cx="65" cy="65" r="50" fill="none" stroke="#6BAA82" stroke-width="18"
               stroke-dasharray="260.4 314.16" stroke-dashoffset="0"
               transform="rotate(-90 65 65)"/>
-            <!-- Amber 13% = 40.8px -->
             <circle cx="65" cy="65" r="50" fill="none" stroke="#D4A04E" stroke-width="18"
               stroke-dasharray="40.8 314.16" stroke-dashoffset="-260.4"
               transform="rotate(-90 65 65)"/>
-            <!-- Red 4% = 12.6px -->
             <circle cx="65" cy="65" r="50" fill="none" stroke="#C7654A" stroke-width="18"
               stroke-dasharray="12.96 314.16" stroke-dashoffset="-301.2"
               transform="rotate(-90 65 65)"/>
@@ -827,17 +946,17 @@ function ceoViewDashboard() {
           <div class="donut-legend">
             <div class="legend-item">
               <div class="legend-dot" style="background:var(--green)"></div>
-              <div class="legend-label">Zona Verde — <span class="legend-count">78</span> empleados</div>
+              <div class="legend-label">🌿 Bienestar — <span class="legend-count">78</span> empleados</div>
               <div class="legend-pct">83%</div>
             </div>
             <div class="legend-item">
               <div class="legend-dot" style="background:var(--amber)"></div>
-              <div class="legend-label">Zona Ámbar — <span class="legend-count">12</span> empleados</div>
+              <div class="legend-label">⚠️ Atención — <span class="legend-count">12</span> empleados</div>
               <div class="legend-pct">13%</div>
             </div>
             <div class="legend-item">
               <div class="legend-dot" style="background:var(--terra)"></div>
-              <div class="legend-label">Zona Roja — <span class="legend-count">3</span> empleados</div>
+              <div class="legend-label">🚨 Situación Crítica — <span class="legend-count">3</span> empleados</div>
               <div class="legend-pct">3%</div>
             </div>
           </div>
@@ -858,7 +977,7 @@ function ceoViewDashboard() {
               <td><strong>Producto &amp; Tech</strong></td>
               <td>Ana Martínez</td>
               <td><span class="index-num">61/100</span></td>
-              <td><span class="status-badge status-amber">🟡 Ámbar</span></td>
+              <td><span class="status-badge status-amber">⚠️ Atención</span></td>
               <td style="color:var(--terra)">↓ Bajando</td>
               <td><span class="action-link">Ver detalle →</span></td>
             </tr>
@@ -866,7 +985,7 @@ function ceoViewDashboard() {
               <td><strong>Ventas</strong></td>
               <td>Marcos Ruiz</td>
               <td><span class="index-num">74/100</span></td>
-              <td><span class="status-badge status-green">🟢 Verde</span></td>
+              <td><span class="status-badge status-green">🌿 Bienestar</span></td>
               <td style="color:var(--ink3)">→ Estable</td>
               <td><span style="color:var(--ink4);font-size:12px">—</span></td>
             </tr>
@@ -874,7 +993,7 @@ function ceoViewDashboard() {
               <td><strong>Operaciones</strong></td>
               <td>Lucía Vidal</td>
               <td><span class="index-num">48/100</span></td>
-              <td><span class="status-badge status-red">🔴 Rojo</span></td>
+              <td><span class="status-badge status-red">🚨 Situación Crítica</span></td>
               <td style="color:var(--terra)">↓ Crítico</td>
               <td><span class="action-link" style="color:var(--terra)">Actuar →</span></td>
             </tr>
@@ -882,7 +1001,7 @@ function ceoViewDashboard() {
               <td><strong>Marketing</strong></td>
               <td>David Chen</td>
               <td><span class="index-num">82/100</span></td>
-              <td><span class="status-badge status-green">🟢 Verde</span></td>
+              <td><span class="status-badge status-green">🌿 Bienestar</span></td>
               <td style="color:var(--green)">↑ Subiendo</td>
               <td><span style="color:var(--ink4);font-size:12px">—</span></td>
             </tr>
@@ -890,7 +1009,7 @@ function ceoViewDashboard() {
               <td><strong>Soporte</strong></td>
               <td>Elena Torres</td>
               <td><span class="index-num">66/100</span></td>
-              <td><span class="status-badge status-amber">🟡 Ámbar</span></td>
+              <td><span class="status-badge status-amber">⚠️ Atención</span></td>
               <td style="color:var(--ink3)">→ Estable</td>
               <td><span class="action-link">Ver detalle →</span></td>
             </tr>
@@ -942,10 +1061,10 @@ const teams = [
     status:'amber', verde:14, ambar:8, rojo:2,
     trend:[72,70,67,64,63,60,59,61],
     signals:[
-      {icon:'🕐',name:'Extensión horaria media',value:'+1h 45min',pct:72},
-      {icon:'📅',name:'Reuniones en horario de descanso',value:'6 instancias',pct:60},
-      {icon:'💬',name:'Tiempo de respuesta email',value:'+34%',pct:68},
-      {icon:'📊',name:'Carga de tareas asignadas',value:'127% capacidad',pct:85},
+      {icon:'🕐',name:'Extensión horaria media',value:'+1h 45min',pct:72,origin:'company'},
+      {icon:'📅',name:'Reuniones en horario de descanso',value:'6 instancias',pct:60,origin:'company'},
+      {icon:'💬',name:'Tiempo de respuesta email',value:'+34%',pct:68,origin:'company'},
+      {icon:'📊',name:'Carga de tareas asignadas',value:'127% capacidad',pct:85,origin:'worker'},
     ]
   },
   {
@@ -953,10 +1072,10 @@ const teams = [
     status:'green', verde:14, ambar:3, rojo:1,
     trend:[68,70,72,73,74,74,75,74],
     signals:[
-      {icon:'🕐',name:'Extensión horaria media',value:'+0h 30min',pct:20},
-      {icon:'📅',name:'Reuniones en horario de descanso',value:'1 instancia',pct:10},
-      {icon:'💬',name:'Tiempo de respuesta email',value:'+5%',pct:15},
-      {icon:'📊',name:'Carga de tareas asignadas',value:'88% capacidad',pct:42},
+      {icon:'🕐',name:'Extensión horaria media',value:'+0h 30min',pct:20,origin:'company'},
+      {icon:'📅',name:'Reuniones en horario de descanso',value:'1 instancia',pct:10,origin:'company'},
+      {icon:'💬',name:'Tiempo de respuesta email',value:'+5%',pct:15,origin:'company'},
+      {icon:'📊',name:'Carga de tareas asignadas',value:'88% capacidad',pct:42,origin:'worker'},
     ]
   },
   {
@@ -964,10 +1083,10 @@ const teams = [
     status:'red', verde:8, ambar:12, rojo:11,
     trend:[65,60,57,52,49,47,46,48],
     signals:[
-      {icon:'🕐',name:'Extensión horaria media',value:'+3h 10min',pct:95},
-      {icon:'📅',name:'Reuniones en horario de descanso',value:'14 instancias',pct:90},
-      {icon:'💬',name:'Tiempo de respuesta email',value:'+68%',pct:87},
-      {icon:'📊',name:'Carga de tareas asignadas',value:'156% capacidad',pct:98},
+      {icon:'🕐',name:'Extensión horaria media',value:'+3h 10min',pct:95,origin:'company'},
+      {icon:'📅',name:'Reuniones en horario de descanso',value:'14 instancias',pct:90,origin:'company'},
+      {icon:'💬',name:'Tiempo de respuesta email',value:'+68%',pct:87,origin:'company'},
+      {icon:'📊',name:'Carga de tareas asignadas',value:'156% capacidad',pct:98,origin:'worker'},
     ]
   },
   {
@@ -975,10 +1094,10 @@ const teams = [
     status:'green', verde:13, ambar:2, rojo:0,
     trend:[75,76,78,80,81,82,83,82],
     signals:[
-      {icon:'🕐',name:'Extensión horaria media',value:'+0h 15min',pct:8},
-      {icon:'📅',name:'Reuniones en horario de descanso',value:'0 instancias',pct:0},
-      {icon:'💬',name:'Tiempo de respuesta email',value:'-2%',pct:5},
-      {icon:'📊',name:'Carga de tareas asignadas',value:'79% capacidad',pct:35},
+      {icon:'🕐',name:'Extensión horaria media',value:'+0h 15min',pct:8,origin:'company'},
+      {icon:'📅',name:'Reuniones en horario de descanso',value:'0 instancias',pct:0,origin:'company'},
+      {icon:'💬',name:'Tiempo de respuesta email',value:'-2%',pct:5,origin:'company'},
+      {icon:'📊',name:'Carga de tareas asignadas',value:'79% capacidad',pct:35,origin:'worker'},
     ]
   },
   {
@@ -986,10 +1105,10 @@ const teams = [
     status:'amber', verde:12, ambar:6, rojo:2,
     trend:[68,67,65,66,64,65,67,66],
     signals:[
-      {icon:'🕐',name:'Extensión horaria media',value:'+1h 05min',pct:48},
-      {icon:'📅',name:'Reuniones en horario de descanso',value:'3 instancias',pct:30},
-      {icon:'💬',name:'Tiempo de respuesta email',value:'+18%',pct:40},
-      {icon:'📊',name:'Carga de tareas asignadas',value:'108% capacidad',pct:62},
+      {icon:'🕐',name:'Extensión horaria media',value:'+1h 05min',pct:48,origin:'company'},
+      {icon:'📅',name:'Reuniones en horario de descanso',value:'3 instancias',pct:30,origin:'company'},
+      {icon:'💬',name:'Tiempo de respuesta email',value:'+18%',pct:40,origin:'company'},
+      {icon:'📊',name:'Carga de tareas asignadas',value:'108% capacidad',pct:62,origin:'worker'},
     ]
   },
 ];
@@ -997,7 +1116,7 @@ const teams = [
 function ceoViewEquipos() {
   const t = teams[selectedTeam];
   const statusMap = {green:'status-green',amber:'status-amber',red:'status-red'};
-  const statusLabel = {green:'🟢 Verde',amber:'🟡 Ámbar',red:'🔴 Rojo'};
+  const statusLabel = {green:'🌿 Bienestar',amber:'⚠️ Atención',red:'🚨 Situación Crítica'};
   const totalPct = t.verde + t.ambar + t.rojo;
   const vPct = Math.round(t.verde/totalPct*100);
   const aPct = Math.round(t.ambar/totalPct*100);
@@ -1011,13 +1130,17 @@ function ceoViewEquipos() {
   tabsHtml += '</div>';
 
   // Signals
+  const originLabel = {company:'🏢 Compañía', worker:'👤 Trabajador'};
   let signalsHtml = '';
   t.signals.forEach(s => {
     signalsHtml += `
     <div class="signal-item">
       <div class="signal-left">
         <span class="signal-icon">${s.icon}</span>
-        <span class="signal-name">${s.name}</span>
+        <div>
+          <span class="signal-name">${s.name}</span>
+          <span class="origin-badge">${originLabel[s.origin]||'🏢 Compañía'}</span>
+        </div>
       </div>
       <div style="text-align:right">
         <div class="signal-value">${s.value}</div>
@@ -1063,9 +1186,9 @@ function ceoViewEquipos() {
       <div class="dist-red" style="width:${rPct}%"></div>
     </div>
     <div class="dist-labels">
-      <span class="dist-label"><span style="width:8px;height:8px;border-radius:50%;background:var(--green);display:inline-block"></span>${t.verde} en verde</span>
-      <span class="dist-label"><span style="width:8px;height:8px;border-radius:50%;background:var(--amber);display:inline-block"></span>${t.ambar} en ámbar</span>
-      <span class="dist-label"><span style="width:8px;height:8px;border-radius:50%;background:var(--terra);display:inline-block"></span>${t.rojo} en rojo</span>
+      <span class="dist-label"><span style="width:8px;height:8px;border-radius:50%;background:var(--green);display:inline-block"></span>${t.verde} Bienestar</span>
+      <span class="dist-label"><span style="width:8px;height:8px;border-radius:50%;background:var(--amber);display:inline-block"></span>${t.ambar} Atención</span>
+      <span class="dist-label"><span style="width:8px;height:8px;border-radius:50%;background:var(--terra);display:inline-block"></span>${t.rojo} Situación Crítica</span>
     </div>
     <div class="privacy-note">🔒 Los datos son agregados. Nunca se muestra información individual de ningún empleado.</div>
   </div>
@@ -1096,26 +1219,50 @@ function ceoViewEquipos() {
   <div class="chart-card">
     <div class="chart-card-title">Acciones recomendadas para este equipo</div>
     <div style="display:flex;flex-direction:column;gap:10px;margin-top:4px">
-      <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:var(--bg);border-radius:var(--r);border:1px solid var(--border)">
-        <div>
-          <div style="font-size:12px;font-weight:600;color:var(--ink);margin-bottom:2px"><span style="font-family:'JetBrains Mono',monospace;color:var(--ink3);font-size:10px;margin-right:8px">R-01</span>Redistribuir carga</div>
-          <div style="font-size:11px;color:var(--ink3)">Sugerir al manager reasignar 3 tareas de perfil A a perfil B</div>
+      <div style="padding:12px 16px;background:var(--bg);border-radius:var(--r);border:1px solid var(--border)">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px">
+          <div style="flex:1">
+            <div style="margin-bottom:4px">
+              <span style="font-family:'JetBrains Mono',monospace;color:var(--ink3);font-size:10px;margin-right:8px">R-01</span>
+              <span class="actor-badge actor-ia">🤖 IA</span>
+              <span class="type-badge type-supervised">👁️ Supervisión</span>
+            </div>
+            <div style="font-size:12px;font-weight:600;color:var(--ink);margin-bottom:2px">Redistribuir carga</div>
+            <div style="font-size:11px;color:var(--ink3)">Sugerir al manager reasignar 3 tareas de perfil A a perfil B</div>
+            <div class="action-responsibility"><span class="resp-label">Ejecuta:</span> Manager ${t.name} &nbsp;<span class="resp-label">Verifica:</span> RRHH</div>
+          </div>
+          <button class="btn-sm ${a1==='applied'?'btn-applied':'btn-cobalt'}" onclick="applyTeamAction('${actionKey}-r01', this)">${a1==='applied'?'✓ Aplicado':'Aplicar'}</button>
         </div>
-        <button class="btn-sm ${a1==='applied'?'btn-applied':'btn-cobalt'}" onclick="applyTeamAction('${actionKey}-r01', this)">${a1==='applied'?'✓ Aplicado':'Aplicar'}</button>
       </div>
-      <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:var(--bg);border-radius:var(--r);border:1px solid var(--border)">
-        <div>
-          <div style="font-size:12px;font-weight:600;color:var(--ink);margin-bottom:2px"><span style="font-family:'JetBrains Mono',monospace;color:var(--ink3);font-size:10px;margin-right:8px">R-02</span>Bloquear Deep Work</div>
-          <div style="font-size:11px;color:var(--ink3)">Reservar bloque 10:00–12:00 sin reuniones para todo el equipo</div>
+      <div style="padding:12px 16px;background:var(--bg);border-radius:var(--r);border:1px solid var(--border)">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px">
+          <div style="flex:1">
+            <div style="margin-bottom:4px">
+              <span style="font-family:'JetBrains Mono',monospace;color:var(--ink3);font-size:10px;margin-right:8px">R-02</span>
+              <span class="actor-badge actor-ia">🤖 IA</span>
+              <span class="type-badge type-auto">⚡ Automático</span>
+            </div>
+            <div style="font-size:12px;font-weight:600;color:var(--ink);margin-bottom:2px">Bloquear Deep Work</div>
+            <div style="font-size:11px;color:var(--ink3)">Reservar bloque 10:00–12:00 sin reuniones para todo el equipo</div>
+            <div class="action-responsibility"><span class="resp-label">Ejecuta:</span> BURNOFF-AI (auto) &nbsp;<span class="resp-label">Verifica:</span> Manager ${t.name}</div>
+          </div>
+          <button class="btn-sm ${a2==='applied'?'btn-applied':'btn-cobalt'}" onclick="applyTeamAction('${actionKey}-r02', this)">${a2==='applied'?'✓ Aplicado':'Aplicar'}</button>
         </div>
-        <button class="btn-sm ${a2==='applied'?'btn-applied':'btn-cobalt'}" onclick="applyTeamAction('${actionKey}-r02', this)">${a2==='applied'?'✓ Aplicado':'Aplicar'}</button>
       </div>
-      <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:var(--bg);border-radius:var(--r);border:1px solid var(--border)">
-        <div>
-          <div style="font-size:12px;font-weight:600;color:var(--ink);margin-bottom:2px"><span style="font-family:'JetBrains Mono',monospace;color:var(--ink3);font-size:10px;margin-right:8px">R-03</span>Día de recuperación</div>
-          <div style="font-size:11px;color:var(--ink3)">Proponer viernes sin reuniones esta semana</div>
+      <div style="padding:12px 16px;background:var(--bg);border-radius:var(--r);border:1px solid var(--border)">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px">
+          <div style="flex:1">
+            <div style="margin-bottom:4px">
+              <span style="font-family:'JetBrains Mono',monospace;color:var(--ink3);font-size:10px;margin-right:8px">R-03</span>
+              <span class="actor-badge actor-empresa">🏢 Empresa</span>
+              <span class="type-badge type-supervised">👁️ Supervisión</span>
+            </div>
+            <div style="font-size:12px;font-weight:600;color:var(--ink);margin-bottom:2px">Día de recuperación</div>
+            <div style="font-size:11px;color:var(--ink3)">Proponer viernes sin reuniones esta semana</div>
+            <div class="action-responsibility"><span class="resp-label">Ejecuta:</span> Dirección &nbsp;<span class="resp-label">Verifica:</span> RRHH</div>
+          </div>
+          <button class="btn-sm ${a3==='applied'?'btn-applied':'btn-outline'}" onclick="applyTeamAction('${actionKey}-r03', this)">${a3==='applied'?'✓ Propuesto':'Proponer'}</button>
         </div>
-        <button class="btn-sm ${a3==='applied'?'btn-applied':'btn-outline'}" onclick="applyTeamAction('${actionKey}-r03', this)">${a3==='applied'?'✓ Propuesto':'Proponer'}</button>
       </div>
     </div>
   </div>`;
@@ -1134,9 +1281,13 @@ function applyTeamAction(key, btn) {
 }
 
 // ── ACCIONES IA ────────────────────────────────────
+let actionTracking = {};
+
 const actionsData = [
   {
     id:'a1', priority:'CRÍTICO', priorityClass:'alert-critical',
+    actor:'ia', actionType:'supervised',
+    responsible:{exec:'Manager Operaciones', verify:'RRHH'},
     title:'Intervención Equipo Operaciones',
     team:'Operaciones',
     filterTags:['critico'],
@@ -1145,19 +1296,33 @@ const actionsData = [
   },
   {
     id:'a2', priority:'SUGERIDO', priorityClass:'alert-medium',
+    actor:'ia', actionType:'auto',
+    responsible:{exec:'BURNOFF-AI (automático)', verify:'Manager Producto & Tech'},
     title:'Bloqueo de Deep Work — Producto & Tech',
     team:'Producto & Tech',
-    filterTags:['ambar'],
+    filterTags:['ambar','automatizables'],
     signals:['40% del equipo sin bloque de concentración','Media de 12 interrupciones/día por reuniones','Productividad estimada reducida un 30%'],
     impact:'↑ 18% concentración estimada para sprints en curso',
   },
   {
     id:'a3', priority:'AUTOMÁTICO', priorityClass:'',
+    actor:'ia', actionType:'auto',
+    responsible:{exec:'BURNOFF-AI (automático)', verify:'RRHH'},
     title:'Recordatorio de descanso — empleado #A-047',
     team:'Operaciones',
     filterTags:['automatizables'],
     signals:['12 días consecutivos sin día libre detectado','Actividad after-hours 5 de los últimos 7 días','Patrón coherente con pre-burnout clínico'],
     impact:'↓ 31% probabilidad de baja en 30 días',
+  },
+  {
+    id:'a4', priority:'SUGERIDO', priorityClass:'alert-medium',
+    actor:'trabajador', actionType:'supervised',
+    responsible:{exec:'Manager Operaciones', verify:'RRHH'},
+    title:'Solicitud de trabajo remoto — Operaciones',
+    team:'Operaciones',
+    filterTags:['ambar'],
+    signals:['3 empleados han solicitado 2 días de teletrabajo','Alta carga presencial detectada esta semana','Índice de bienestar bajó 8 puntos vs semana anterior'],
+    impact:'↑ 15% satisfacción estimada con modalidad híbrida',
   },
 ];
 
@@ -1176,17 +1341,40 @@ function ceoViewAcciones() {
   <div id="actions-list">${renderActionCards()}</div>`;
 }
 
+const actorBadgeHtml = {
+  ia:'<span class="actor-badge actor-ia">🤖 IA</span>',
+  empresa:'<span class="actor-badge actor-empresa">🏢 Empresa</span>',
+  trabajador:'<span class="actor-badge actor-trabajador">👤 Trabajador</span>'
+};
+const typeBadgeHtml = {
+  auto:'<span class="type-badge type-auto">⚡ Automatizable</span>',
+  supervised:'<span class="type-badge type-supervised">👁️ Requiere supervisión</span>'
+};
+
 function renderActionCards() {
   let html = '';
   actionsData.forEach(a => {
     const state = actionStates[a.id];
+    const tracking = actionTracking[a.id] || '';
     const visible = activeFilter === 'todos' || a.filterTags.includes(activeFilter);
     const priorityBg = a.priority==='CRÍTICO'?'background:var(--terra-light);color:var(--terra)':a.priority==='SUGERIDO'?'background:var(--amber-light);color:var(--amber)':'background:var(--cobalt-light);color:var(--cobalt)';
+    const trackerRow = state==='applied' ? `
+      <div class="action-tracker">
+        <span style="font-size:11px;color:var(--ink3);align-self:center;margin-right:4px">Estado:</span>
+        <button class="tracker-btn ${tracking==='planned'?'t-active-planned':''}" onclick="setTracking('${a.id}','planned')">📋 Planificada</button>
+        <button class="tracker-btn ${tracking==='inprogress'?'t-active-inprogress':''}" onclick="setTracking('${a.id}','inprogress')">🔄 En curso</button>
+        <button class="tracker-btn ${tracking==='done'?'t-active-done':''}" onclick="setTracking('${a.id}','done')">✅ Completada</button>
+        <button class="tracker-btn ${tracking==='notdone'?'t-active-notdone':''}" onclick="setTracking('${a.id}','notdone')">❌ No realizada</button>
+      </div>` : '';
     html += `
-    <div class="action-card ${!visible?'filtered-out':''} ${state==='discarded'?'discarded-state':''}" id="acard-${a.id}">
+    <div class="action-card ${a.priority==='CRÍTICO'?'priority-critical':a.priority==='SUGERIDO'?'priority-medium':'priority-auto'} ${!visible?'filtered-out':''} ${state==='discarded'?'discarded-state':''}" id="acard-${a.id}">
       <div class="action-card-top">
         <div>
-          <div style="display:inline-flex;align-items:center;gap:5px;padding:2px 8px;border-radius:100px;font-size:10px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;${priorityBg};margin-bottom:8px">${a.priority}</div>
+          <div style="margin-bottom:6px">
+            <span style="display:inline-flex;align-items:center;gap:5px;padding:2px 8px;border-radius:100px;font-size:10px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;${priorityBg};margin-right:4px">${a.priority}</span>
+            ${actorBadgeHtml[a.actor]||''}
+            ${typeBadgeHtml[a.actionType]||''}
+          </div>
           <div class="action-card-title">${a.title}</div>
           <div class="action-card-team">📍 ${a.team}</div>
         </div>
@@ -1196,7 +1384,9 @@ function renderActionCards() {
         ${a.signals.map(s=>`<div class="action-signal-bullet">${s}</div>`).join('')}
       </div>
       <div class="action-impact">📉 ${a.impact}</div>
-      <div class="action-btns">
+      ${a.responsible?`<div class="action-responsibility"><span class="resp-label">Ejecuta:</span> ${a.responsible.exec} <span class="resp-label" style="margin-left:12px">Verifica:</span> ${a.responsible.verify}</div>`:''}
+      ${trackerRow}
+      <div class="action-btns" style="margin-top:8px">
         ${state!=='applied'&&state!=='discarded'?`<button class="btn-sm btn-cobalt" onclick="applyAction('${a.id}',this)">Aplicar ahora</button>`:''}
         <button class="btn-sm btn-ghost" onclick="">Ver detalle</button>
         ${state!=='applied'&&state!=='discarded'?`<button class="btn-sm btn-ghost" onclick="discardAction('${a.id}')">Descartar</button>`:''}
@@ -1204,6 +1394,11 @@ function renderActionCards() {
     </div>`;
   });
   return html || `<div class="no-action">No hay acciones en esta categoría.</div>`;
+}
+
+function setTracking(id, status) {
+  actionTracking[id] = status;
+  renderCEOView('acciones');
 }
 
 function setFilter(f) {
@@ -1340,6 +1535,8 @@ function renderEmpView(viewId) {
   else if (viewId === 'tendencia') mc.innerHTML = empViewTendencia();
   else if (viewId === 'sugerencias') mc.innerHTML = empViewSugerencias();
   else if (viewId === 'calendario') mc.innerHTML = empViewCalendario();
+  else if (viewId === 'bolsahoras') mc.innerHTML = empViewBolsaHoras();
+  else if (viewId === 'formacion') mc.innerHTML = empViewFormacion();
   else if (viewId === 'misdatos') mc.innerHTML = empViewMisDatos();
 }
 
@@ -1398,10 +1595,26 @@ function empViewCheckin() {
   </div>
 
   <div class="question-card">
-    <div class="question-num">PREGUNTA 05 / 05 · <span style="color:var(--ink3)">Opcional</span></div>
-    <div class="question-text">¿Quieres añadir algo más?</div>
-    <textarea class="textarea-field" placeholder="Lo que escribas aquí se procesa localmente y no se almacena en crudo."></textarea>
-    <div class="textarea-note">🔒 Este texto nunca abandona tu dispositivo en texto claro.</div>
+    <div class="question-num">PREGUNTA 05 / 06</div>
+    <div class="question-text">¿Qué ha mejorado esta semana respecto a la semana pasada?</div>
+    ${opts(5,['Nada ha mejorado','La carga de trabajo','La comunicación del equipo','Mi gestión personal'])}
+  </div>
+
+  <div class="question-card">
+    <div class="question-num">PREGUNTA 06 / 06 · <span style="color:var(--ink3)">Opcional</span></div>
+    <div class="question-text">¿Cuál ha sido el principal obstáculo esta semana?</div>
+    ${opts(6,['Sin obstáculos','Exceso de reuniones','Falta de información','Carga excesiva','Problemas técnicos'])}
+  </div>
+
+  <div class="question-card">
+    <div class="question-num">VALORACIÓN RÁPIDA DEL DÍA</div>
+    <div class="question-text">¿Cómo valoras tu jornada de hoy en general?</div>
+    <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap">
+      <button class="quick-rate-btn quick-green ${checkinAnswers.quickRate==='green'?'qsel':''}" onclick="setQuickRate('green',this)">🌿 Bien</button>
+      <button class="quick-rate-btn quick-amber ${checkinAnswers.quickRate==='amber'?'qsel':''}" onclick="setQuickRate('amber',this)">⚠️ Regular</button>
+      <button class="quick-rate-btn quick-red ${checkinAnswers.quickRate==='red'?'qsel':''}" onclick="setQuickRate('red',this)">🚨 Difícil</button>
+    </div>
+    <div class="textarea-note" style="margin-top:8px">💡 Esta valoración rápida es especialmente útil al final de un turno de producción.</div>
   </div>
 
   <div class="submit-btn-wrap">
@@ -1411,7 +1624,7 @@ function empViewCheckin() {
 
 function checkinResult() {
   const score = checkinAnswers.score !== undefined ? checkinAnswers.score : 62;
-  const zoneName = score >= 70 ? 'Zona Verde' : score >= 40 ? 'Zona Ámbar' : 'Zona Roja';
+  const zoneName = score >= 70 ? '🌿 Bienestar' : score >= 40 ? '⚠️ Atención' : '🚨 Situación Crítica';
   const zoneColor = score >= 70 ? 'var(--green)' : score >= 40 ? 'var(--amber)' : 'var(--terra)';
   const zoneIcon = score >= 70 ? '🌿' : score >= 40 ? '🌱' : '🔥';
   return `
@@ -1432,6 +1645,12 @@ function selectOpt(q, idx, el) {
   const card = el.closest('.question-card');
   card.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
   el.classList.add('selected');
+}
+
+function setQuickRate(color, el) {
+  checkinAnswers.quickRate = color;
+  el.closest('.question-card').querySelectorAll('.quick-rate-btn').forEach(b=>b.classList.remove('qsel'));
+  el.classList.add('qsel');
 }
 
 function submitCheckin() {
@@ -1459,10 +1678,13 @@ function submitCheckin() {
 // ── MI TENDENCIA ───────────────────────────────────
 function empViewTendencia() {
   const vals = [74,72,68,65,70,62,60,62];
+  const prodVals = [71,68,65,63,67,60,58,61];
   const w=460, h=100, minV=30, maxV=100;
   const xs = vals.map((_,i)=>i/(vals.length-1)*w);
   const ys = vals.map(v=>h-(v-minV)/(maxV-minV)*h);
+  const ysProd = prodVals.map(v=>h-(v-minV)/(maxV-minV)*h);
   const polyline = xs.map((x,i)=>`${x},${ys[i]}`).join(' ');
+  const polylineProd = xs.map((x,i)=>`${x},${ysProd[i]}`).join(' ');
   const areaPath = `M${xs[0]},${ys[0]} `+xs.map((x,i)=>`L${x},${ys[i]}`).join(' ')+` L${xs[xs.length-1]},${h} L${xs[0]},${h} Z`;
   const greenY = h-(70-minV)/(maxV-minV)*h;
   const amberY = h-(40-minV)/(maxV-minV)*h;
@@ -1470,24 +1692,34 @@ function empViewTendencia() {
   return `
   <div class="page-header">
     <div class="page-title">Mi Tendencia</div>
-    <div class="page-subtitle">Evolución de tu índice personal de bienestar · Últimas 8 semanas</div>
+    <div class="page-subtitle">Evolución de tu bienestar y productividad · Últimas 8 semanas</div>
   </div>
 
   <div class="line-chart-card">
-    <div class="chart-card-title">Índice de Bienestar Personal</div>
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+      <div class="chart-card-title" style="margin-bottom:0">Índice de Bienestar Personal</div>
+      <div style="display:flex;gap:14px;font-size:11px">
+        <span style="display:flex;align-items:center;gap:5px"><span style="width:14px;height:3px;background:var(--cobalt);border-radius:2px;display:inline-block"></span>Bienestar</span>
+        <span style="display:flex;align-items:center;gap:5px"><span style="width:14px;height:3px;background:var(--amber);border-radius:2px;display:inline-block;border-top:2px dashed var(--amber)"></span>Productividad</span>
+      </div>
+    </div>
     <svg viewBox="0 0 ${w} ${h+24}" style="width:100%;height:150px">
       <rect x="0" y="0" width="${w}" height="${greenY}" fill="#EDF5F0" opacity="0.6"/>
       <rect x="0" y="${greenY}" width="${w}" height="${amberY-greenY}" fill="#FBF4E7" opacity="0.6"/>
       <rect x="0" y="${amberY}" width="${w}" height="${h-amberY}" fill="#FAF0EC" opacity="0.6"/>
       <line x1="0" y1="${greenY}" x2="${w}" y2="${greenY}" stroke="#6BAA82" stroke-width="1" stroke-dasharray="4 4"/>
       <line x1="0" y1="${amberY}" x2="${w}" y2="${amberY}" stroke="#C7654A" stroke-width="1" stroke-dasharray="4 4"/>
-      <path d="${areaPath}" fill="var(--cobalt)" opacity="0.08"/>
+      <path d="${areaPath}" fill="var(--cobalt)" opacity="0.06"/>
+      <!-- Productividad line -->
+      <polyline points="${polylineProd}" fill="none" stroke="#D4A04E" stroke-width="2" stroke-dasharray="6 3" stroke-linejoin="round" stroke-linecap="round"/>
+      ${xs.map((x,i)=>`<circle cx="${x}" cy="${ysProd[i]}" r="3.5" fill="#D4A04E" stroke="white" stroke-width="1.5"/>`).join('')}
+      <!-- Bienestar line -->
       <polyline points="${polyline}" fill="none" stroke="var(--cobalt)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
       ${xs.map((x,i)=>`<circle cx="${x}" cy="${ys[i]}" r="4.5" fill="${vals[i]>=70?'var(--green)':vals[i]>=40?'var(--amber)':'var(--terra)'}" stroke="white" stroke-width="2"/>
       <text x="${x}" y="${ys[i]-10}" text-anchor="middle" font-family="Inter" font-size="9" font-weight="500" fill="#3D4552">${vals[i]}</text>`).join('')}
       ${xs.map((x,i)=>`<text x="${x}" y="${h+16}" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#7A8394">S${i+13}</text>`).join('')}
-      <text x="${w-2}" y="${greenY-4}" text-anchor="end" font-family="JetBrains Mono" font-size="9" fill="var(--green)">Verde &gt;70</text>
-      <text x="${w-2}" y="${amberY-4}" text-anchor="end" font-family="JetBrains Mono" font-size="9" fill="var(--terra)">Rojo &lt;40</text>
+      <text x="${w-2}" y="${greenY-4}" text-anchor="end" font-family="JetBrains Mono" font-size="9" fill="var(--green)">Bienestar &gt;70</text>
+      <text x="${w-2}" y="${amberY-4}" text-anchor="end" font-family="JetBrains Mono" font-size="9" fill="var(--terra)">Crítico &lt;40</text>
     </svg>
   </div>
 
@@ -1523,6 +1755,10 @@ function empViewTendencia() {
     <div class="compare-item">
       <div class="compare-dot" style="background:var(--cobalt)"></div>
       <div class="compare-text">Tu semana <strong>mejor de los últimos 2 meses</strong> fue la Semana 13 (74/100).</div>
+    </div>
+    <div class="compare-item">
+      <div class="compare-dot" style="background:var(--amber)"></div>
+      <div class="compare-text">🔗 Bienestar y productividad muestran <strong>tendencia correlada</strong>: cuando baja el bienestar, la productividad lo sigue en 1–2 semanas.</div>
     </div>
   </div>`;
 }
@@ -1674,6 +1910,446 @@ function empViewMisDatos() {
       <button class="gdpr-btn">🔕 Pausar monitoraje</button>
     </div>
   </div>`;
+}
+
+// ── HISTÓRICO & EVALUACIÓN ─────────────────────────
+function ceoViewHistorico() {
+  const depts = [
+    {name:'Operaciones',  color:'#C7654A', vals:[65,60,57,52,49,47,46,48,49,50,51,48]},
+    {name:'Producto & Tech', color:'#2A4FD6', vals:[72,70,67,64,63,60,59,61,62,63,64,61]},
+    {name:'Ventas',       color:'#6BAA82', vals:[68,70,72,73,74,74,75,74,73,74,75,74]},
+    {name:'Marketing',    color:'#7B6DAE', vals:[75,76,78,80,81,82,83,82,83,84,85,82]},
+    {name:'Soporte',      color:'#D4A04E', vals:[68,67,65,66,64,65,67,66,65,66,67,66]},
+  ];
+  const w=540, h=140, minV=30, maxV=110;
+  const n = 12;
+  const xs = Array.from({length:n},(_,i)=>i/(n-1)*w);
+  const toY = v => h-(v-minV)/(maxV-minV)*h;
+  // Objective line y=100
+  const objY = toY(100);
+
+  let polylines = depts.map(d=>{
+    const pts = xs.map((x,i)=>`${x},${toY(d.vals[i])}`).join(' ');
+    return `<polyline points="${pts}" fill="none" stroke="${d.color}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" opacity="0.85"/>
+    ${xs.map((x,i)=>`<circle cx="${x}" cy="${toY(d.vals[i])}" r="3" fill="${d.color}" stroke="white" stroke-width="1.5"/>`).join('')}`;
+  }).join('');
+
+  let legendHtml = depts.map(d=>`
+    <div class="history-legend-item">
+      <div class="history-legend-line" style="background:${d.color}"></div>
+      <span>${d.name}</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3)">${d.vals[n-1]}/100</span>
+    </div>`).join('');
+
+  const weekLabels = xs.map((x,i)=>`<text x="${x}" y="${h+16}" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#7A8394">S${i+10}</text>`).join('');
+
+  return `
+  <div class="page-header">
+    <div class="page-title">Histórico &amp; Evaluación</div>
+    <div class="page-subtitle">Ciclo mesurar → corregir → avaluar · 12 semanas</div>
+  </div>
+
+  <div class="kpi-grid">
+    <div class="kpi-card">
+      <div class="kpi-label">Índice empresa (actual)</div>
+      <div class="kpi-value">68<span class="kpi-value-unit">/100</span></div>
+      <div class="kpi-trend trend-down">↓ -4 vs hace 4 semanas</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Índice hace 4 semanas</div>
+      <div class="kpi-value">72<span class="kpi-value-unit">/100</span></div>
+      <div class="kpi-trend trend-neutral">— referencia S18</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Acciones aplicadas (90d)</div>
+      <div class="kpi-value">7</div>
+      <div class="kpi-trend trend-down">3 completadas · 4 en curso</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Predicción IA (+4 sem.)</div>
+      <div class="kpi-value">71<span class="kpi-value-unit">/100</span></div>
+      <div class="kpi-trend trend-down">↑ +3 si se aplican acciones</div>
+    </div>
+  </div>
+
+  <div class="chart-card" style="margin-bottom:20px">
+    <div class="chart-card-title" style="margin-bottom:8px">Evolución por departamento · Semanas 10–21</div>
+    <div class="history-legend">${legendHtml}</div>
+    <svg viewBox="0 0 ${w} ${h+24}" style="width:100%;height:180px">
+      <rect x="0" y="0" width="${w}" height="${toY(70)}" fill="#EDF5F0" opacity="0.35"/>
+      <rect x="0" y="${toY(70)}" width="${w}" height="${toY(40)-toY(70)}" fill="#FBF4E7" opacity="0.35"/>
+      <rect x="0" y="${toY(40)}" width="${w}" height="${h-toY(40)}" fill="#FAF0EC" opacity="0.35"/>
+      <!-- objetivo 100 -->
+      <line x1="0" y1="${objY}" x2="${w}" y2="${objY}" stroke="#2A4FD6" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.4"/>
+      <text x="${w-4}" y="${objY-5}" text-anchor="end" font-family="JetBrains Mono" font-size="9" fill="#2A4FD6" opacity="0.7">Objetivo 100</text>
+      ${polylines}
+      ${weekLabels}
+    </svg>
+  </div>
+
+  <div class="table-card" style="margin-bottom:20px">
+    <div class="table-header">Acciones implementadas y su impacto</div>
+    <table>
+      <thead><tr><th>Acción</th><th>Equipo</th><th>Semana</th><th>Impacto medido</th><th>Estado</th></tr></thead>
+      <tbody>
+        <tr><td>Bloqueo Deep Work (IA)</td><td>Producto &amp; Tech</td><td>S18</td><td style="color:var(--green)">+4 pts bienestar</td><td><span class="status-badge status-green">✅ Completada</span></td></tr>
+        <tr><td>Redistribución carga</td><td>Operaciones</td><td>S19</td><td style="color:var(--amber)">+2 pts (parcial)</td><td><span class="status-badge status-amber">🔄 En curso</span></td></tr>
+        <tr><td>Recordatorio descanso (auto)</td><td>Operaciones</td><td>S20</td><td style="color:var(--green)">+1 pt bienestar</td><td><span class="status-badge status-green">✅ Completada</span></td></tr>
+        <tr><td>Día de recuperación</td><td>Soporte</td><td>S20</td><td style="color:var(--ink3)">En evaluación</td><td><span class="status-badge status-amber">🔄 En curso</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout-card">
+    <p>🤖 <strong>Insight IA:</strong> Las acciones de tipo «bloqueo de tiempo» tienen un <strong>73% más de efectividad</strong> que las de redistribución de carga en equipos con índice &lt;60. Predicción: si se aplican las 3 acciones pendientes, el índice global subirá a <strong>71/100 en 4 semanas</strong>.</p>
+  </div>`;
+}
+
+// ── ABSENTISMO ─────────────────────────────────────
+function ceoViewAbsentismo() {
+  return `
+  <div class="page-header">
+    <div class="page-title">Absentismo</div>
+    <div class="page-subtitle">Calidad de la presencia · Indicador de satisfacción y compromiso</div>
+  </div>
+
+  <div class="kpi-grid">
+    <div class="kpi-card">
+      <div class="kpi-label">Total días ausencia (mes)</div>
+      <div class="kpi-value">23</div>
+      <div class="kpi-trend trend-up">↑ +5 vs mes anterior</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">🏥 Involuntario</div>
+      <div class="kpi-value">14</div>
+      <div class="kpi-trend trend-neutral">— Enfermedad/accidente</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">🕐 Voluntario en horario</div>
+      <div class="kpi-value" style="color:var(--terra)">6</div>
+      <div class="kpi-trend trend-up">↑ Indicador de baja satisfacción</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">📅 Voluntario fuera horario</div>
+      <div class="kpi-value" style="color:var(--green)">3</div>
+      <div class="kpi-trend trend-down">↓ Indicador de compromiso</div>
+    </div>
+  </div>
+
+  <div class="table-card" style="margin-bottom:20px">
+    <div class="table-header">Absentismo por departamento</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Equipo</th>
+          <th>🏥 Involuntario</th>
+          <th>🕐 Vol. en horario</th>
+          <th>📅 Vol. fuera horario</th>
+          <th>Ratio compromiso</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Operaciones</strong></td>
+          <td>8</td>
+          <td style="color:var(--terra);font-weight:600">5</td>
+          <td>1</td>
+          <td><span class="status-badge status-amber">⚠️ Bajo</span></td>
+        </tr>
+        <tr>
+          <td><strong>Producto &amp; Tech</strong></td>
+          <td>4</td>
+          <td>1</td>
+          <td>2</td>
+          <td><span class="status-badge status-green">✅ Bueno</span></td>
+        </tr>
+        <tr>
+          <td><strong>Ventas</strong></td>
+          <td>1</td>
+          <td>0</td>
+          <td>0</td>
+          <td><span class="status-badge status-green">✅ Muy bueno</span></td>
+        </tr>
+        <tr>
+          <td><strong>Marketing</strong></td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td><span class="status-badge status-green">🌿 Óptimo</span></td>
+        </tr>
+        <tr>
+          <td><strong>Soporte</strong></td>
+          <td>1</td>
+          <td>0</td>
+          <td>0</td>
+          <td><span class="status-badge status-green">✅ Bueno</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="chart-card" style="margin-bottom:20px">
+    <div class="chart-card-title">Tipología de ausencias · Guía de interpretación</div>
+    <div style="display:flex;flex-direction:column;gap:10px;margin-top:4px">
+      <div style="display:flex;gap:12px;padding:12px;background:var(--bg);border-radius:var(--r)">
+        <span style="font-size:20px">🏥</span>
+        <div><div style="font-size:13px;font-weight:600;color:var(--ink);margin-bottom:3px">Involuntario — Enfermedad o accidente</div>
+        <div style="font-size:12px;color:var(--ink3)">No controlable. Indicador de salud física del equipo. Alta frecuencia puede correlacionar con agotamiento crónico.</div></div>
+      </div>
+      <div style="display:flex;gap:12px;padding:12px;background:var(--terra-light);border-radius:var(--r)">
+        <span style="font-size:20px">🕐</span>
+        <div><div style="font-size:13px;font-weight:600;color:var(--terra);margin-bottom:3px">Voluntario en horario laboral — Indicador de baja satisfacción</div>
+        <div style="font-size:12px;color:var(--ink3)">Médico, gestiones personales dentro del horario. Alta frecuencia indica que el empleado no prioriza organizarse fuera del trabajo.</div></div>
+      </div>
+      <div style="display:flex;gap:12px;padding:12px;background:var(--green-light);border-radius:var(--r)">
+        <span style="font-size:20px">📅</span>
+        <div><div style="font-size:13px;font-weight:600;color:var(--green);margin-bottom:3px">Voluntario fuera de horario — Indicador de compromiso</div>
+        <div style="font-size:12px;color:var(--ink3)">El empleado gestiona sus asuntos personales fuera del horario laboral. Señal de implicación y respeto al equipo.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout-card">
+    <p>⚠️ <strong>Alerta:</strong> Operaciones concentra el <strong>78% de las ausencias voluntarias en horario laboral</strong>. Este patrón correlaciona con su bajo índice de bienestar (48/100) y es un indicador temprano de desmotivación. Se recomienda intervención directa con el manager.</p>
+  </div>`;
+}
+
+// ── CONFIGURACIÓN ──────────────────────────────────
+let selectedCompanyType = 'manufactura';
+function ceoViewConfiguracion() {
+  const types = [
+    {id:'manufactura',emoji:'🏭',name:'Manufactura'},
+    {id:'servicios',emoji:'💼',name:'Servicios'},
+    {id:'retail',emoji:'🏪',name:'Retail'},
+    {id:'salud',emoji:'🏥',name:'Salud'},
+    {id:'tech',emoji:'🖥️',name:'Tecnología'},
+  ];
+  const typeCards = types.map(t=>`
+    <div class="company-type-card ${selectedCompanyType===t.id?'selected':''}" onclick="selectCompanyType('${t.id}')">
+      <span class="company-type-emoji">${t.emoji}</span>
+      <span class="company-type-name">${t.name}</span>
+    </div>`).join('');
+  return `
+  <div class="page-header">
+    <div class="page-title">Configuración de empresa</div>
+    <div class="page-subtitle">Adapta BURNOFF a tu sector, tipología y necesidades específicas</div>
+  </div>
+
+  <div class="config-section">
+    <div class="config-title">Tipo de empresa</div>
+    <div class="company-type-grid">${typeCards}</div>
+    <div style="font-size:12px;color:var(--ink3);margin-top:10px">El tipo de empresa ajusta automáticamente las métricas disponibles y los rangos de referencia.</div>
+  </div>
+
+  <div class="config-section">
+    <div class="config-title">Métricas activas</div>
+    ${[
+      ['Presencialidad obligatoria','Actívalo si los empleados deben estar físicamente en la oficina/planta',true],
+      ['Trabajo por turnos','Habilita métricas de rotación de turnos y cobertura','manufactura'===selectedCompanyType],
+      ['Horas extra permitidas','Registra y analiza las horas extra como indicador de carga',true],
+      ['Teletrabajo disponible','Incluye métricas de conexión remota y conciliación','tech'===selectedCompanyType||'servicios'===selectedCompanyType],
+      ['Productividad física (unidades/hora)','Ratio de producción real sobre horas trabajadas','manufactura'===selectedCompanyType],
+    ].map(([label,desc,on])=>`
+    <div class="toggle-row" style="margin-bottom:12px">
+      <div>
+        <div class="toggle-label">${label}</div>
+        <div class="toggle-desc">${desc}</div>
+      </div>
+      <label class="toggle-switch">
+        <input type="checkbox" ${on?'checked':''}>
+        <span class="toggle-slider"></span>
+      </label>
+    </div>`).join('')}
+  </div>
+
+  <div class="config-section">
+    <div class="config-title">Umbrales de zonas</div>
+    <div class="threshold-row">
+      <span style="width:12px;height:12px;background:var(--green);border-radius:50%;display:inline-block"></span>
+      <span style="color:var(--green);font-weight:600">🌿 Bienestar</span>
+      <span>por encima de</span>
+      <input class="threshold-input" type="number" value="70" min="1" max="99"> puntos
+    </div>
+    <div class="threshold-row">
+      <span style="width:12px;height:12px;background:var(--amber);border-radius:50%;display:inline-block"></span>
+      <span style="color:var(--amber);font-weight:600">⚠️ Atención</span>
+      <span>entre</span>
+      <input class="threshold-input" type="number" value="40" min="1" max="99">
+      <span>y</span>
+      <input class="threshold-input" type="number" value="70" min="1" max="99"> puntos
+    </div>
+    <div class="threshold-row">
+      <span style="width:12px;height:12px;background:var(--terra);border-radius:50%;display:inline-block"></span>
+      <span style="color:var(--terra);font-weight:600">🚨 Situación Crítica</span>
+      <span>por debajo de</span>
+      <input class="threshold-input" type="number" value="40" min="1" max="99"> puntos
+    </div>
+    <button class="btn-sm btn-cobalt" style="margin-top:8px" onclick="this.textContent='✓ Guardado';this.classList.add('btn-applied')">Guardar umbrales</button>
+  </div>
+
+  <div class="config-section">
+    <div class="config-title">Importación de datos externos</div>
+    <div class="upload-area" onclick="this.innerHTML='<div style=\\'font-size:13px;color:var(--cobalt);font-weight:500\\'>✓ Archivo seleccionado: plantilla_rrhh.xlsx</div>'">
+      <div style="font-size:24px;margin-bottom:8px">📂</div>
+      <div style="font-size:13px;font-weight:500;color:var(--ink2)">Arrastra aquí tu archivo Excel/CSV</div>
+      <div style="font-size:11px;color:var(--ink3);margin-top:4px">Formatos soportados: .xlsx, .csv, .json · Máx. 10 MB</div>
+    </div>
+    <div style="display:flex;gap:8px;margin-top:12px">
+      <button class="btn-sm btn-outline">🔗 Conectar ERP/nómina</button>
+      <button class="btn-sm btn-ghost">📥 Descargar plantilla</button>
+    </div>
+  </div>`;
+}
+
+function selectCompanyType(type) {
+  selectedCompanyType = type;
+  renderCEOView('configuracion');
+}
+
+// ── BOLSA DE HORAS ─────────────────────────────────
+function empViewBolsaHoras() {
+  return `
+  <div class="page-header">
+    <div class="page-title">Bolsa de Horas</div>
+    <div class="page-subtitle">Flexibilidad voluntaria · Win-win empresa y trabajador</div>
+  </div>
+
+  <div class="bolsa-balance">
+    <div class="bolsa-bal-item">
+      <div class="bolsa-bal-val" style="color:var(--green)">+4h 30m</div>
+      <div class="bolsa-bal-label">Horas acumuladas</div>
+    </div>
+    <div class="bolsa-bal-item">
+      <div class="bolsa-bal-val" style="color:var(--terra)">-2h 00m</div>
+      <div class="bolsa-bal-label">Horas utilizadas</div>
+    </div>
+    <div class="bolsa-bal-item" style="border-right:none">
+      <div class="bolsa-bal-val" style="color:var(--cobalt)">2h 30m</div>
+      <div class="bolsa-bal-label">Saldo disponible</div>
+    </div>
+  </div>
+
+  <div class="bolsa-card">
+    <div class="chart-card-title" style="margin-bottom:14px">Ofrecer disponibilidad voluntaria</div>
+    <div style="font-size:13px;color:var(--ink2);margin-bottom:10px">Me ofrezco para cubrir horas o dar soporte a otro departamento en:</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px">
+      ${['Semana 22 — Lunes','Semana 22 — Martes','Semana 22 — Miércoles','Semana 22 — Jueves'].map((d,i)=>`
+      <button class="option-btn" onclick="this.classList.toggle('selected')" style="padding:8px 14px"><span class="opt-label">${d}</span></button>`).join('')}
+    </div>
+    <button class="btn-sm btn-cobalt" onclick="this.textContent='✓ Disponibilidad registrada';this.classList.add('btn-applied')">Registrar disponibilidad</button>
+  </div>
+
+  <div class="bolsa-card">
+    <div class="chart-card-title" style="margin-bottom:14px">Solicitar flexibilidad</div>
+    <div style="font-size:13px;color:var(--ink2);margin-bottom:10px">Indica periodos en que necesitarás más flexibilidad:</div>
+    <div class="form-field">
+      <label class="form-label">Motivo</label>
+      <select class="form-input" style="cursor:pointer">
+        <option>Conciliación familiar</option>
+        <option>Cita médica programada</option>
+        <option>Formación personal</option>
+        <option>Otro</option>
+      </select>
+    </div>
+    <div class="form-field">
+      <label class="form-label">Semana</label>
+      <select class="form-input" style="cursor:pointer">
+        <option>Semana 22</option>
+        <option>Semana 23</option>
+        <option>Semana 24</option>
+      </select>
+    </div>
+    <button class="btn-sm btn-outline" onclick="this.textContent='✓ Solicitud enviada';this.classList.add('btn-applied')">Solicitar flexibilidad</button>
+  </div>
+
+  <div class="bolsa-card">
+    <div class="chart-card-title" style="margin-bottom:14px">Historial de movimientos</div>
+    <table>
+      <thead><tr><th>Semana</th><th>Tipo</th><th>Horas</th><th>Estado</th></tr></thead>
+      <tbody>
+        <tr><td>S20 Lunes</td><td>Horas extra cubiertas</td><td style="color:var(--green);font-weight:600">+3h</td><td><span class="status-badge status-green">✅ Aprobado</span></td></tr>
+        <tr><td>S19 Viernes</td><td>Salida anticipada</td><td style="color:var(--terra);font-weight:600">-1.5h</td><td><span class="status-badge status-green">✅ Utilizado</span></td></tr>
+        <tr><td>S18 Miércoles</td><td>Soporte Operaciones</td><td style="color:var(--green);font-weight:600">+3h</td><td><span class="status-badge status-green">✅ Aprobado</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div style="padding:14px 16px;background:var(--cobalt-light);border-radius:var(--r-lg);border:1px solid rgba(42,79,214,0.15);font-size:12px;color:var(--cobalt)">
+    💡 Las horas acumuladas por cubrir turnos se pueden disfrutar en momentos de baja carga, sin necesidad de solicitar permiso especial. Especialmente útil en empresas con trabajo por turnos o en cadena.
+  </div>`;
+}
+
+// ── FORMACIÓN & CONFIANZA ──────────────────────────
+let formationStates = {};
+function empViewFormacion() {
+  const modules = [
+    {
+      id:'f1', num:'MÓDULO 01', title:'¿Para qué sirven tus respuestas?',
+      desc:'Tus check-ins generan sugerencias personalizadas únicamente para ti. Nunca se comparten de forma individual. La IA los usa para recomendarte acciones concretas que mejoren tu semana.',
+      btn:'Entendido ✓'
+    },
+    {
+      id:'f2', num:'MÓDULO 02', title:'¿Quién ve tus datos?',
+      desc:'Solo TÚ ves tus datos individuales. Tu manager solo ve agregados anónimos del equipo (nunca puede identificarte). RRHH ve únicamente estadísticas de departamento.',
+      extra:`<div style="display:flex;gap:8px;align-items:center;margin:10px 0;font-size:12px;color:var(--ink2)">
+        <span style="padding:5px 10px;background:var(--cobalt-light);border-radius:var(--r);font-weight:500">Tus datos</span>
+        <span>→</span>
+        <span style="padding:5px 10px;background:var(--amber-light);border-radius:var(--r);font-weight:500">Anonimización</span>
+        <span>→</span>
+        <span style="padding:5px 10px;background:var(--bg);border:1px solid var(--border);border-radius:var(--r);font-weight:500">Solo agregados</span>
+      </div>`,
+      btn:'Entendido ✓'
+    },
+    {
+      id:'f3', num:'MÓDULO 03', title:'¿Cómo te benefician las acciones?',
+      desc:'Ciclo: check-in → análisis IA → sugerencias personalizadas → mejor bienestar. Los empleados que usan BURNOFF activamente mejoran su índice en un 23% en 8 semanas.',
+      btn:'Entendido ✓'
+    },
+    {
+      id:'f4', num:'MÓDULO 04', title:'Tu honestidad importa',
+      desc:'Un sistema donde todos ponen siempre "verde" es un sistema inútil. Tu honestidad al responder protege al equipo: permite detectar problemas reales antes de que se conviertan en bajas.',
+      extra:`<div style="padding:10px 14px;background:var(--ink);border-radius:var(--r);color:rgba(255,255,255,0.85);font-size:12px;font-style:italic;margin:10px 0">"La herramienta solo funciona si confías en ella y la usas con sinceridad. Tu empresa te la da para ayudarte a ti, no para vigilarte."</div>`,
+      btn:'Me comprometo ✓'
+    },
+  ];
+  const completed = modules.filter(m=>formationStates[m.id]).length;
+  const pct = Math.round(completed/modules.length*100);
+
+  let mHtml = modules.map(m=>`
+  <div class="formation-card">
+    <div class="formation-num">${m.num} ${formationStates[m.id]?'<span style="color:var(--green)">✓ Completado</span>':''}</div>
+    <div class="formation-title">${m.title}</div>
+    <div class="formation-desc">${m.desc}</div>
+    ${m.extra||''}
+    <button class="btn-sm ${formationStates[m.id]?'btn-applied':'btn-cobalt'}" onclick="completeFormation('${m.id}',this)">${formationStates[m.id]?'✓ Completado':m.btn}</button>
+  </div>`).join('');
+
+  return `
+  <div class="page-header">
+    <div class="page-title">Formación &amp; Confianza</div>
+    <div class="page-subtitle">Entiende para qué sirven tus datos · Solo tú te beneficias</div>
+  </div>
+
+  <div class="chart-card" style="margin-bottom:20px">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
+      <span style="font-size:13px;font-weight:600;color:var(--ink)">Progreso del módulo</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--cobalt)">${completed}/${modules.length} completados</span>
+    </div>
+    <div style="height:8px;background:var(--bg);border-radius:100px;overflow:hidden">
+      <div style="height:100%;background:var(--cobalt);border-radius:100px;width:${pct}%;transition:width 400ms ease"></div>
+    </div>
+    ${pct===100?`<div style="margin-top:10px;font-size:12px;color:var(--green);font-weight:500">🎉 ¡Formación completada! Nivel de confianza: Óptimo</div>`:`<div style="margin-top:8px;font-size:11px;color:var(--ink3)">Completa todos los módulos para desbloquear el nivel de confianza máximo.</div>`}
+  </div>
+
+  ${mHtml}`;
+}
+
+function completeFormation(id, btn) {
+  formationStates[id] = true;
+  btn.classList.add('btn-applied');
+  btn.textContent = '✓ Completado';
+  // re-render to update progress
+  setTimeout(()=>renderEmpView('formacion'), 300);
 }
 
 // end of script
