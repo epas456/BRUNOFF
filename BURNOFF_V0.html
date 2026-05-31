@@ -667,6 +667,64 @@ tbody tr:hover{background:var(--cobalt-light)}
 .back-btn{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--ink3);cursor:pointer;margin-bottom:16px;padding:6px 12px;border:1px solid var(--border-md);border-radius:var(--r);background:var(--surface);transition:all 120ms}
 .back-btn:hover{color:var(--cobalt);border-color:var(--cobalt);background:var(--cobalt-light)}
 
+
+/* ── AI PANEL ── */
+.ai-panel{position:fixed;right:0;top:0;bottom:0;width:400px;background:#fff;box-shadow:-6px 0 32px rgba(15,20,25,0.14);z-index:600;display:flex;flex-direction:column;transform:translateX(100%);transition:transform 320ms cubic-bezier(.4,0,.2,1)}
+.ai-panel.open{transform:translateX(0)}
+.ai-panel-header{padding:16px 20px;border-bottom:1px solid var(--border-md);display:flex;align-items:center;gap:10px;flex-shrink:0;background:linear-gradient(135deg,#0F172A,#1E3A5F)}
+.ai-panel-title{font-size:14px;font-weight:600;color:#fff;flex:1}
+.ai-panel-sub{font-size:10px;color:rgba(255,255,255,.6);font-family:'JetBrains Mono',monospace;letter-spacing:.04em}
+.ai-close-btn{width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.1);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:14px;flex-shrink:0;transition:background 120ms}
+.ai-close-btn:hover{background:rgba(255,255,255,.2)}
+.ai-messages{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:12px;scroll-behavior:smooth}
+.ai-msg{display:flex;flex-direction:column;gap:4px;max-width:92%}
+.ai-msg.user{align-self:flex-end;align-items:flex-end}
+.ai-msg.ai{align-self:flex-start}
+.ai-bubble{padding:10px 14px;border-radius:14px;font-size:12px;line-height:1.6}
+.ai-msg.user .ai-bubble{background:var(--cobalt);color:#fff;border-bottom-right-radius:4px}
+.ai-msg.ai .ai-bubble{background:var(--bg);border:1px solid var(--border-md);color:var(--ink2);border-bottom-left-radius:4px}
+.ai-msg-time{font-size:10px;color:var(--ink4);font-family:'JetBrains Mono',monospace}
+.ai-typing{display:flex;gap:4px;align-items:center;padding:10px 14px;background:var(--bg);border:1px solid var(--border-md);border-radius:14px;border-bottom-left-radius:4px;width:fit-content}
+.ai-typing span{width:6px;height:6px;border-radius:50%;background:var(--ink3);animation:typing .9s infinite}
+.ai-typing span:nth-child(2){animation-delay:.2s}
+.ai-typing span:nth-child(3){animation-delay:.4s}
+@keyframes typing{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-5px)}}
+.ai-quick-chips{padding:12px 16px;border-top:1px solid var(--border);display:flex;flex-wrap:wrap;gap:6px;background:var(--bg);flex-shrink:0}
+.ai-quick-chip{font-size:11px;padding:5px 10px;border-radius:100px;background:var(--surface);border:1px solid var(--border-md);color:var(--ink2);cursor:pointer;transition:all 120ms;white-space:nowrap}
+.ai-quick-chip:hover{background:var(--cobalt-light);border-color:var(--cobalt-mid);color:var(--cobalt)}
+.ai-input-row{padding:12px 16px;border-top:1px solid var(--border-md);display:flex;gap:8px;flex-shrink:0}
+.ai-input{flex:1;padding:9px 12px;border:1px solid var(--border-md);border-radius:20px;font-size:13px;font-family:'Inter',sans-serif;outline:none;transition:border-color 150ms;background:#fff}
+.ai-input:focus{border-color:var(--cobalt)}
+.ai-send-btn{width:36px;height:36px;border-radius:50%;background:var(--cobalt);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;transition:background 120ms;font-size:14px}
+.ai-send-btn:hover{background:var(--cobalt-mid)}
+.ai-overlay{position:fixed;inset:0;background:rgba(15,20,25,0.3);z-index:599;display:none}
+.ai-overlay.visible{display:block}
+/* AI trigger button */
+.ai-fab{position:fixed;bottom:24px;right:24px;z-index:500;background:linear-gradient(135deg,#1E3A5F,#2563EB);color:#fff;border-radius:100px;padding:12px 20px;font-size:13px;font-weight:600;display:flex;align-items:center;gap:8px;box-shadow:0 4px 20px rgba(30,58,95,0.35);cursor:pointer;transition:transform 160ms,box-shadow 160ms;border:none}
+.ai-fab:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(30,58,95,0.42)}
+.ai-fab .ai-fab-dot{width:8px;height:8px;border-radius:50%;background:#34d399;animation:pulse-green 2s infinite}
+@keyframes pulse-green{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.7;transform:scale(1.3)}}
+/* ── COMPARE EMPLOYEE SELECTOR ── */
+.emp-compare-grid{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.emp-compare-chip{display:flex;align-items:center;gap:7px;padding:6px 12px 6px 6px;border-radius:100px;border:2px solid var(--border-md);background:#fff;cursor:pointer;transition:all 130ms;user-select:none}
+.emp-compare-chip:hover{border-color:var(--cobalt-mid);background:var(--cobalt-light)}
+.emp-compare-chip.selected{border-color:var(--cobalt);background:var(--cobalt-light)}
+.emp-compare-chip.selected-red{border-color:var(--terra);background:var(--terra-light)}
+.emp-compare-chip.selected-amber{border-color:var(--amber);background:var(--amber-light)}
+.emp-compare-chip.selected-green{border-color:var(--green);background:var(--green-light)}
+.emp-chip-av{width:22px;height:22px;border-radius:50%;color:#fff;font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.emp-chip-name{font-size:11px;font-weight:500;color:var(--ink)}
+.emp-chip-check{width:14px;height:14px;border-radius:50%;border:1.5px solid var(--border-md);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-left:2px;font-size:9px}
+.emp-compare-chip.selected .emp-chip-check,.emp-compare-chip.selected-red .emp-chip-check,.emp-compare-chip.selected-amber .emp-chip-check,.emp-compare-chip.selected-green .emp-chip-check{border-color:currentColor;background:currentColor;color:#fff}
+.dept-label-sm{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink3);margin-top:10px;margin-bottom:4px}
+/* AI bubble formatted content */
+.ai-briefing-section{margin:6px 0;padding:8px 10px;background:rgba(255,255,255,.6);border-radius:8px;border:1px solid rgba(0,0,0,.06)}
+.ai-briefing-title{font-weight:700;font-size:12px;color:var(--ink);margin-bottom:6px}
+.ai-briefing-row{display:flex;justify-content:space-between;font-size:11px;padding:2px 0;border-bottom:1px solid rgba(0,0,0,.04)}
+.ai-briefing-row:last-child{border-bottom:none}
+.ai-briefing-key{color:var(--ink3)}
+.ai-briefing-val{font-weight:600;font-family:'JetBrains Mono',monospace}
+
 </style>
 </head>
 <body>
@@ -1196,9 +1254,46 @@ function attachCEOEvents(viewId){
         return{labels:depts.map(d=>d.length>12?d.slice(0,12)+'…':d),datasets:[{label:'Por Departamento',data:depts.map((d)=>{const emps=getEmpsByDept(d);return emps.length?Math.round(emps.reduce((s,e)=>{const v=metric==='wellbeing_index'?e.index:metric==='reuniones'?e.metrics.reuniones:metric==='tareas'?e.metrics.cargaTareas:metric==='productividad'?e.metrics.productividad:metric==='horas_extra'?e.metrics.horasExtra:metric==='respuesta_email'?e.metrics.respEmail:metric==='teletrabajo'?e.metrics.teletrabajo:5;return s+v;},0)/emps.length):0;}),backgroundColor:deptColors.map(c=>c+'CC'),borderColor:deptColors,borderWidth:1.5,borderRadius:6}]};
       }
       if(level==='trabajador'){
-        const emp=employees.find(e=>e.id===selectedEmployee)||employees[0];
-        const vals=emp.trend.map((_,i)=>metric==='wellbeing_index'?emp.trend[i]:metric==='horas_extra'?emp.metrics.horasExtra+(Math.random()*.4-.2):emp.metrics.productividad+(Math.random()*4-2)|0);
-        return{labels:weeks,datasets:[{label:emp.name,data:vals.map(v=>+v.toFixed(1)),borderColor:emp.avatarColor,backgroundColor:emp.avatarColor+'18',tension:.4,fill:true,pointRadius:5}]};
+        const selEmps=analyticsSelectedEmps.map(id=>employees.find(e=>e.id===id)).filter(Boolean);
+        if(!selEmps.length) selEmps.push(employees[0]);
+        function empMetricVal(emp,m){
+          if(m==='wellbeing_index') return null; // use trend
+          if(m==='horas_extra') return emp.metrics.horasExtra;
+          if(m==='reuniones') return emp.metrics.reuniones;
+          if(m==='tareas') return emp.metrics.cargaTareas;
+          if(m==='productividad') return emp.metrics.productividad;
+          if(m==='respuesta_email') return emp.metrics.respEmail;
+          if(m==='teletrabajo') return emp.metrics.teletrabajo;
+          return 5;
+        }
+        const datasets=selEmps.map(emp=>{
+          let vals;
+          if(metric==='wellbeing_index'){
+            vals=emp.trend;
+          } else {
+            const base=empMetricVal(emp,metric);
+            // Generate realistic 8-week progression ending at current value
+            const seed=emp.id.charCodeAt(1);
+            vals=Array.from({length:8},(_,i)=>{
+              const noise=(Math.sin(i*2.1+seed)*0.8+Math.cos(i*1.3+seed)*0.5);
+              const progress=i/7; // 0→1 over weeks
+              return Math.max(0,+(base*(0.85+0.15*progress)+noise).toFixed(1));
+            });
+          }
+          return{
+            label:emp.name,
+            data:vals,
+            borderColor:emp.avatarColor,
+            backgroundColor:selEmps.length===1?emp.avatarColor+'18':'transparent',
+            tension:.4,
+            fill:selEmps.length===1,
+            pointRadius:5,
+            pointHoverRadius:8,
+            borderWidth:2.5,
+            pointBackgroundColor:metric==='wellbeing_index'?vals.map(v=>v>=70?'#059669':v>=40?'#D97706':'#DC2626'):emp.avatarColor
+          };
+        });
+        return{labels:weeks,datasets};
       }
       return{labels:weeks,datasets:[]};
     }
@@ -2659,6 +2754,9 @@ let dataCenterTab = 'import';
 let importStep = 1;
 let analyticsMetric = 'wellbeing_index';
 let analyticsLevel = 'company';
+let analyticsSelectedEmps = ['e02','e05','e12']; // default: Pablo(red), Carla(red), Elena V(red) — impactful demo
+let aiChat = [];
+let aiPanelOpen = false;
 function empViewFormacion() {
   const modules = [
     {
@@ -2937,14 +3035,14 @@ function setImportStep(step) {
 // ── ANALÍTICA ──────────────────────────────────────
 function ceoViewAnalitica(){
   const metrics=[
-    {id:'wellbeing_index',label:'Índice de Bienestar'},
-    {id:'reuniones',label:'Reuniones por día'},
-    {id:'tareas',label:'Carga de Tareas (%)'},
-    {id:'productividad',label:'Productividad (%)'},
-    {id:'horas_extra',label:'Horas Extra por día'},
-    {id:'respuesta_email',label:'Variación Resp. Email (%)'},
-    {id:'teletrabajo',label:'Días Teletrabajo / semana'},
-    {id:'absentismo',label:'Absentismo (%)'}
+    {id:'wellbeing_index',label:'Índice de Bienestar',unit:'/100'},
+    {id:'reuniones',label:'Reuniones por día',unit:''},
+    {id:'tareas',label:'Carga de Tareas',unit:'%'},
+    {id:'productividad',label:'Productividad',unit:'%'},
+    {id:'horas_extra',label:'Horas Extra por día',unit:'h'},
+    {id:'respuesta_email',label:'Variación Resp. Email',unit:'%'},
+    {id:'teletrabajo',label:'Días Teletrabajo/sem',unit:''},
+    {id:'absentismo',label:'Absentismo',unit:'%'}
   ];
   const levels=[
     {id:'company',label:'🏢 Empresa'},
@@ -2959,23 +3057,62 @@ function ceoViewAnalitica(){
   </div>`;
   const curMetric=metrics.find(m=>m.id===analyticsMetric)||metrics[0];
   const curLevel=levels.find(l=>l.id===analyticsLevel)||levels[0];
-
-  const field={wellbeing_index:'index',reuniones:'reuniones',tareas:'cargaTareas',productividad:'productividad',horas_extra:'horasExtra',respuesta_email:'respEmail',teletrabajo:'teletrabajo',absentismo:'absentismo'};
   const depts=['Producto & Tech','Ventas','Operaciones','Marketing','Soporte'];
 
+  // ── Employee selector (when level = trabajador) ──
+  let empSelectorHtml='';
+  if(analyticsLevel==='trabajador'){
+    const selSet=new Set(analyticsSelectedEmps);
+    const selCount=selSet.size;
+    const deptChips=depts.map(dept=>{
+      const emps=getEmpsByDept(dept);
+      if(!emps.length) return '';
+      const chips=emps.map(e=>{
+        const isSel=selSet.has(e.id);
+        const selClass=isSel?(e.status==='red'?'selected-red':e.status==='amber'?'selected-amber':'selected-green'):'';
+        return `<div class="emp-compare-chip ${selClass}" onclick="toggleCompareEmployee('${e.id}')">
+          <div class="emp-chip-av" style="background:${e.avatarColor}">${e.avatar}</div>
+          <div>
+            <div class="emp-chip-name">${e.name}</div>
+            <div style="font-size:9px;color:var(--ink3)">${e.index}/100</div>
+          </div>
+          <div class="emp-chip-check">${isSel?'✓':''}</div>
+        </div>`;
+      }).join('');
+      return `<div class="dept-label-sm">${dept}</div><div class="emp-compare-grid">${chips}</div>`;
+    }).join('');
+
+    empSelectorHtml=`
+    <div style="padding:14px 16px;background:var(--bg);border-radius:var(--r);border:1px solid var(--border-md);margin-bottom:16px">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
+        <div style="font-size:11px;font-weight:600;color:var(--ink3);text-transform:uppercase;letter-spacing:.06em">
+          Seleccionar empleados para comparar <span style="color:var(--cobalt-mid)">(${selCount} seleccionados · máx. 6)</span>
+        </div>
+        <div style="display:flex;gap:6px">
+          <button class="btn-sm btn-ghost" style="font-size:10px" onclick="analyticsSelectedEmps=employees.filter(e=>e.status==='red').map(e=>e.id).slice(0,6);renderCEOView('analitica')">🚨 Solo críticos</button>
+          <button class="btn-sm btn-ghost" style="font-size:10px" onclick="analyticsSelectedEmps=employees.map(e=>e.id).slice(0,6);renderCEOView('analitica')">Seleccionar 6</button>
+          <button class="btn-sm btn-ghost" style="font-size:10px" onclick="analyticsSelectedEmps=[];renderCEOView('analitica')">Limpiar</button>
+        </div>
+      </div>
+      ${deptChips}
+    </div>`;
+  }
+
+  // ── Ranking table (trabajador view) ──
   let rankRows='';
   if(analyticsLevel==='trabajador'){
-    const f=field[analyticsMetric]||'index';
-    const sorted=[...employees].sort((a,b)=>{
-      const va=f==='index'?a.index:(a.metrics[f]||0);
-      const vb=f==='index'?b.index:(b.metrics[f]||0);
-      return vb-va;
-    });
+    const f={wellbeing_index:'index',reuniones:'reuniones',tareas:'cargaTareas',productividad:'productividad',horas_extra:'horasExtra',respuesta_email:'respEmail',teletrabajo:'teletrabajo'}[analyticsMetric]||'index';
+    const sorted=[...employees].sort((a,b)=>{const va=f==='index'?a.index:(a.metrics[f]||0);const vb=f==='index'?b.index:(b.metrics[f]||0);return vb-va;});
+    const selSet=new Set(analyticsSelectedEmps);
     rankRows=sorted.slice(0,10).map((e,i)=>{
       const val=f==='index'?e.index:(e.metrics[f]||0);
-      return `<tr onclick="openEmployee('${e.id}')">
+      const isSel=selSet.has(e.id);
+      return `<tr onclick="openEmployee('${e.id}')" style="${isSel?'background:var(--cobalt-light)':''}">
         <td style="font-family:'JetBrains Mono',monospace;color:var(--ink3);font-size:11px">#${i+1}</td>
-        <td><div class="emp-name-wrap"><div class="emp-av" style="background:${e.avatarColor};width:24px;height:24px;font-size:9px">${e.avatar}</div><span class="emp-name">${e.name}</span></div></td>
+        <td><div class="emp-name-wrap">
+          <div class="emp-av" style="background:${e.avatarColor};width:24px;height:24px;font-size:9px;box-shadow:${isSel?'0 0 0 2px #1E3A5F':''}">${e.avatar}</div>
+          <span class="emp-name" style="color:${isSel?'var(--cobalt)':''}">${e.name}${isSel?' ◉':''}</span>
+        </div></td>
         <td><span style="font-size:11px;color:var(--ink3)">${e.dept}</span></td>
         <td><span style="font-family:'JetBrains Mono',monospace;font-weight:600;color:${idxColor(e.index)}">${val}</span></td>
         <td><span class="status-badge ${statusBadgeClass(e.status)}">${statusLabel(e.status)}</span></td>
@@ -2985,21 +3122,32 @@ function ceoViewAnalitica(){
   }
 
   return `
-  <div class="page-header">
-    <div class="page-title">Analítica Avanzada</div>
-    <div class="page-subtitle">Métricas de bienestar por empresa, departamento o trabajador</div>
+  <div class="page-header" style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px">
+    <div>
+      <div class="page-title">Analítica Avanzada</div>
+      <div class="page-subtitle">Métricas por empresa, departamento o trabajador · Comparativa multiempleado</div>
+    </div>
+    <button class="btn-sm btn-cobalt" style="display:flex;align-items:center;gap:6px;padding:8px 16px" onclick="openAIPanel()">
+      <span style="font-size:15px">🤖</span> Asistente IA
+    </button>
   </div>
+
+  ${empSelectorHtml}
+
   <div class="chart-card" style="margin-bottom:16px">
     <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:16px">
       <div><div style="font-size:11px;font-weight:600;color:var(--ink3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">Métrica</div>${metricSel}</div>
       <div><div style="font-size:11px;font-weight:600;color:var(--ink3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">Nivel de análisis</div>${levelSeg}</div>
     </div>
-    <div class="chart-card-title" style="margin-bottom:12px">${curMetric.label} · ${curLevel.label}</div>
-    <div style="position:relative;height:280px"><canvas id="chart-analytics"></canvas></div>
+    <div class="chart-card-title" style="margin-bottom:4px">${curMetric.label} · ${curLevel.label}
+      ${analyticsLevel==='trabajador'&&analyticsSelectedEmps.length?`<span style="font-size:11px;color:var(--ink3);font-weight:400"> · ${analyticsSelectedEmps.length} empleado${analyticsSelectedEmps.length>1?'s':''}</span>`:''}
+    </div>
+    <div style="position:relative;height:300px"><canvas id="chart-analytics"></canvas></div>
   </div>
+
   ${analyticsLevel==='trabajador'?`
   <div class="table-card">
-    <div class="table-header">Ranking Empleados — ${curMetric.label}</div>
+    <div class="table-header">Ranking — ${curMetric.label} <span style="font-weight:400;font-size:11px;color:var(--ink3)">(◉ = en comparativa)</span></div>
     <table class="emp-table">
       <thead><tr><th>#</th><th>Empleado</th><th>Dpto</th><th>Valor</th><th>Estado</th><th></th></tr></thead>
       <tbody>${rankRows}</tbody>
@@ -3007,6 +3155,296 @@ function ceoViewAnalitica(){
   </div>`:''}`;
 }
 
+// ═══════════════════════════════════════════════════
+// COMPARE EMPLOYEE FUNCTIONS
+// ═══════════════════════════════════════════════════
+function toggleCompareEmployee(id){
+  const idx=analyticsSelectedEmps.indexOf(id);
+  if(idx>=0){
+    analyticsSelectedEmps.splice(idx,1);
+  } else {
+    if(analyticsSelectedEmps.length>=6){
+      analyticsSelectedEmps.shift(); // remove oldest
+    }
+    analyticsSelectedEmps.push(id);
+  }
+  renderCEOView('analitica');
+}
+
+// ═══════════════════════════════════════════════════
+// AI ASSISTANT FUNCTIONS
+// ═══════════════════════════════════════════════════
+function openAIPanel(){
+  aiPanelOpen=true;
+  document.getElementById('ai-panel').classList.add('open');
+  document.getElementById('ai-overlay').classList.add('visible');
+  if(aiChat.length===0){
+    aiChat.push({role:'ai',text:buildWelcomeMsg(),time:nowTime()});
+    renderAIMessages();
+  }
+}
+function closeAIPanel(){
+  aiPanelOpen=false;
+  document.getElementById('ai-panel').classList.remove('open');
+  document.getElementById('ai-overlay').classList.remove('visible');
+}
+function nowTime(){
+  const d=new Date();
+  return `${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`;
+}
+function buildWelcomeMsg(){
+  const s=getCompanyStats();
+  return `<b>¡Hola! Soy el Asistente IA de BURNOFF.</b><br><br>
+Tengo acceso a los datos de los <b>${s.n} empleados</b> de tu empresa.<br>
+Índice empresa actual: <b style="color:${idxColor(s.avg)}">${s.avg}/100</b> · 
+<b style="color:var(--terra)">${s.red} críticos</b> · 
+<b style="color:var(--amber)">${s.amber} en atención</b><br><br>
+Puedo ayudarte con:<br>
+• Briefing detallado de cualquier empleado<br>
+• Análisis de riesgo y burnout<br>
+• Comparativas por departamento<br>
+• Métricas específicas<br>
+• Recomendaciones de acción<br><br>
+¿Sobre qué quieres saber?`;
+}
+
+function sendAIMessage(){
+  const input=document.getElementById('ai-input');
+  const text=input.value.trim();
+  if(!text) return;
+  input.value='';
+  aiChat.push({role:'user',text:text,time:nowTime()});
+  renderAIMessages();
+  // Show typing indicator then respond
+  setTimeout(()=>{
+    const response=generateAIResponse(text);
+    aiChat.push({role:'ai',text:response,time:nowTime()});
+    renderAIMessages();
+  },600+Math.random()*400);
+}
+
+function handleAIQuickAction(text){
+  document.getElementById('ai-input').value=text;
+  sendAIMessage();
+}
+
+function aiInputKeydown(e){
+  if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendAIMessage();}
+}
+
+function renderAIMessages(){
+  const container=document.getElementById('ai-messages');
+  if(!container) return;
+  container.innerHTML=aiChat.map(m=>`
+    <div class="ai-msg ${m.role}">
+      <div class="ai-bubble">${m.text}</div>
+      <div class="ai-msg-time">${m.time}</div>
+    </div>`).join('');
+  container.scrollTop=container.scrollHeight;
+}
+
+function getEmpVal(e,field){
+  if(field==='index') return e.index;
+  return e.metrics[field]||0;
+}
+
+function generateAIResponse(input){
+  const q=input.toLowerCase().trim();
+  const s=getCompanyStats();
+
+  // ── Match employee by first or last name ──
+  const matchedEmp=employees.find(e=>{
+    const parts=e.name.toLowerCase().split(' ');
+    return parts.some(p=>q.includes(p)&&p.length>3);
+  });
+
+  if(matchedEmp && (q.includes('briefing')||q.includes('resumen')||q.includes('perfil')||q.includes('datos')||q.includes('info')||q.length<40)){
+    return generateEmpBriefing(matchedEmp);
+  }
+
+  // ── Top riesgo / críticos ──
+  if(q.includes('riesgo')||q.includes('burnout')||q.includes('crítico')||q.includes('peor bienestar')||q.includes('alerta')){
+    const top=employees.filter(e=>e.status==='red').sort((a,b)=>b.risk-a.risk);
+    const ambs=employees.filter(e=>e.status==='amber').sort((a,b)=>b.risk-a.risk).slice(0,3);
+    return `<b>🚨 Situación crítica — ${top.length} empleados en zona roja:</b><br><br>
+${top.map((e,i)=>`<div style="margin:3px 0;padding:6px 10px;background:var(--terra-light);border-radius:6px;font-size:11px">
+  <b>${i+1}. ${e.name}</b> · ${e.dept}<br>
+  Índice: <b style="color:var(--terra)">${e.index}/100</b> · Riesgo: <b>${e.risk}%</b><br>
+  <i style="font-size:10px">${e.signals[0]?.text||''}</i>
+</div>`).join('')}
+<br><b>⚠️ Top atención:</b><br>
+${ambs.map(e=>`<div style="margin:3px 0;font-size:11px;padding:4px 8px;background:var(--amber-light);border-radius:6px"><b>${e.name}</b> — Riesgo ${e.risk}%</div>`).join('')}
+<br>💡 <i>Tip: Escribe el nombre de un empleado para ver su briefing completo.</i>`;
+  }
+
+  // ── Mejor bienestar / top performers ──
+  if(q.includes('mejor')||q.includes('más sano')||q.includes('bien')||q.includes('verde')){
+    const top5=[...employees].sort((a,b)=>b.index-a.index).slice(0,5);
+    return `<b>🌿 Top 5 empleados con mejor bienestar:</b><br><br>
+${top5.map((e,i)=>`<div style="margin:3px 0;padding:6px 10px;background:var(--green-light);border-radius:6px;font-size:11px">
+  <b>${i+1}. ${e.name}</b> · ${e.dept}<br>
+  Índice: <b style="color:var(--green)">${e.index}/100</b> · Riesgo: ${e.risk}%
+</div>`).join('')}
+<br>📌 Referentes positivos a destacar como ejemplos de equilibrio saludable.`;
+  }
+
+  // ── Comparar departamentos ──
+  if(q.includes('comparar')||q.includes('departamento')||q.includes('equipo')||q.includes('dept')){
+    const depts=['Producto & Tech','Ventas','Operaciones','Marketing','Soporte'];
+    const stats=depts.map(d=>{
+      const emps=getEmpsByDept(d);
+      const avg=Math.round(emps.reduce((s,e)=>s+e.index,0)/emps.length);
+      const avgRisk=Math.round(emps.reduce((s,e)=>s+e.risk,0)/emps.length);
+      const red=emps.filter(e=>e.status==='red').length;
+      return{name:d,avg,avgRisk,red,count:emps.length};
+    }).sort((a,b)=>a.avg-b.avg);
+    return `<b>📊 Comparativa por departamento:</b><br><br>
+${stats.map((d,i)=>`<div style="margin:4px 0;padding:8px 10px;background:var(--bg);border-radius:8px;border:1px solid var(--border-md);font-size:11px">
+  <div style="display:flex;justify-content:space-between;align-items:center">
+    <b>${i===0?'🚨':i===1?'⚠️':'🌿'} ${d.name}</b>
+    <span style="font-family:'JetBrains Mono',monospace;font-weight:700;color:${idxColor(d.avg)}">${d.avg}/100</span>
+  </div>
+  <div style="color:var(--ink3);margin-top:3px">${d.count} pers. · Riesgo medio: ${d.avgRisk}%${d.red?' · <b style="color:var(--terra)">${d.red} críticos</b>':''}</div>
+  <div style="height:3px;background:var(--border-md);border-radius:100px;margin-top:5px"><div style="height:100%;width:${d.avg}%;background:${idxColor(d.avg)};border-radius:100px"></div></div>
+</div>`).join('')}
+<br><b>Conclusión IA:</b> La brecha entre el mejor (Marketing ${stats[4].avg}/100) y el peor (Operaciones ${stats[0].avg}/100) es de <b>${stats[4].avg-stats[0].avg} puntos</b>. Se recomienda intervención urgente en ${stats[0].name}.`;
+  }
+
+  // ── Media empresa / índice global ──
+  if(q.includes('media')||q.includes('índice')||q.includes('empresa')||q.includes('global')||q.includes('resumen empresa')||q.includes('overview')){
+    const dists=[...employees].reduce((acc,e)=>{acc[e.status]=(acc[e.status]||0)+1;return acc;},{});
+    const avgHExtra=+(employees.reduce((s,e)=>s+e.metrics.horasExtra,0)/employees.length).toFixed(1);
+    const avgMeet=+(employees.reduce((s,e)=>s+e.metrics.reuniones,0)/employees.length).toFixed(1);
+    const avgLoad=Math.round(employees.reduce((s,e)=>s+e.metrics.cargaTareas,0)/employees.length);
+    return `<b>🏢 Resumen Global de Empresa — ${employees.length} empleados</b><br><br>
+<div style="padding:10px;background:var(--bg);border-radius:8px;border:1px solid var(--border-md);margin-bottom:8px">
+  <div style="font-size:22px;font-weight:700;color:${idxColor(s.avg)};text-align:center;line-height:1">${s.avg}<span style="font-size:14px">/100</span></div>
+  <div style="text-align:center;font-size:10px;color:var(--ink3)">Índice Bienestar Empresa</div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:8px">
+  <div style="text-align:center;padding:8px;background:var(--green-light);border-radius:6px"><div style="font-weight:700;color:var(--green)">${s.green}</div><div style="font-size:10px;color:var(--ink3)">🌿 Bienestar</div></div>
+  <div style="text-align:center;padding:8px;background:var(--amber-light);border-radius:6px"><div style="font-weight:700;color:var(--amber)">${s.amber}</div><div style="font-size:10px;color:var(--ink3)">⚠️ Atención</div></div>
+  <div style="text-align:center;padding:8px;background:var(--terra-light);border-radius:6px"><div style="font-weight:700;color:var(--terra)">${s.red}</div><div style="font-size:10px;color:var(--ink3)">🚨 Crítico</div></div>
+</div>
+Horas extra/día media: <b>${avgHExtra}h</b> · Reuniones/día: <b>${avgMeet}</b> · Carga media: <b>${avgLoad}%</b><br><br>
+💡 <b>BURNOFF-AI recomienda:</b> Acción inmediata en Operaciones (${getEmpsByDept('Operaciones').filter(e=>e.status==='red').length} críticos). Potencial ahorro en bajas: <b>€180.000/año</b> estimado.`;
+  }
+
+  // ── Horas extra ──
+  if(q.includes('horas extra')||q.includes('overtime')||q.includes('extensión')){
+    const sorted=[...employees].sort((a,b)=>b.metrics.horasExtra-a.metrics.horasExtra).slice(0,5);
+    return `<b>🕐 Top 5 empleados con más horas extra:</b><br><br>
+${sorted.map((e,i)=>`<div style="margin:3px 0;padding:6px 10px;background:${e.metrics.horasExtra>3?'var(--terra-light)':'var(--amber-light)'};border-radius:6px;font-size:11px">
+  <b>${e.name}</b> · ${e.dept}<br>
+  <span style="color:${e.metrics.horasExtra>3?'var(--terra)':'var(--amber)'}"><b>+${e.metrics.horasExtra}h/día</b></span> · Carga: ${e.metrics.cargaTareas}%
+</div>`).join('')}
+<br>Media empresa: <b>${+(employees.reduce((s,e)=>s+e.metrics.horasExtra,0)/employees.length).toFixed(1)}h/día</b>`;
+  }
+
+  // ── Reuniones ──
+  if(q.includes('reuniones')||q.includes('meetings')||q.includes('meeting fatigue')){
+    const sorted=[...employees].sort((a,b)=>b.metrics.reuniones-a.metrics.reuniones).slice(0,5);
+    return `<b>📅 Top 5 con más reuniones/día:</b><br><br>
+${sorted.map((e,i)=>`<div style="margin:3px 0;padding:6px 10px;background:${e.metrics.reuniones>7?'var(--terra-light)':'var(--amber-light)'};border-radius:6px;font-size:11px">
+  <b>${e.name}</b> · ${e.dept}<br>
+  <b>${e.metrics.reuniones} reuniones/día</b> · Productividad: ${e.metrics.productividad}%
+</div>`).join('')}
+<br>⚠️ Más de 6 reuniones/día = fragmentación cognitiva severa. Considera bloqueos de Deep Work.`;
+  }
+
+  // ── Productividad ──
+  if(q.includes('productividad')||q.includes('rendimiento')||q.includes('performance')){
+    const sorted=[...employees].sort((a,b)=>b.metrics.productividad-a.metrics.productividad);
+    const top3=sorted.slice(0,3);
+    const bot3=sorted.slice(-3);
+    return `<b>📈 Análisis de Productividad</b><br><br>
+<b style="color:var(--green)">Top 3 más productivos:</b><br>
+${top3.map(e=>`<div style="margin:2px 0;font-size:11px;padding:5px 8px;background:var(--green-light);border-radius:5px"><b>${e.name}</b> — ${e.metrics.productividad}% · ${e.dept}</div>`).join('')}
+<br><b style="color:var(--terra)">3 con menor productividad:</b><br>
+${bot3.map(e=>`<div style="margin:2px 0;font-size:11px;padding:5px 8px;background:var(--terra-light);border-radius:5px"><b>${e.name}</b> — ${e.metrics.productividad}% · Riesgo burnout: ${e.risk}%</div>`).join('')}
+<br>💡 Correlación detectada: productividad baja + riesgo alto = candidatos prioritarios para intervención.`;
+  }
+
+  // ── Briefing genérico sin nombre ──
+  if(q.includes('briefing')){
+    return `Para generar un briefing, indícame el nombre del empleado. Ejemplo:<br><br>
+<i>"Briefing de Pablo Moreno"</i><br><i>"Resumen de Elena Vidal"</i><br><i>"Datos de Carla Jiménez"</i><br><br>
+Empleados con mayor riesgo: <b>${employees.filter(e=>e.risk>=70).map(e=>e.name.split(' ')[0]).join(', ')}</b>`;
+  }
+
+  // ── Teletrabajo ──
+  if(q.includes('teletrabajo')||q.includes('remoto')||q.includes('presencial')){
+    const avgTele=+(employees.reduce((s,e)=>s+e.metrics.teletrabajo,0)/employees.length).toFixed(1);
+    const noTele=employees.filter(e=>e.metrics.teletrabajo===0);
+    return `<b>🏠 Análisis de Teletrabajo</b><br><br>
+Media empresa: <b>${avgTele} días/semana</b><br><br>
+${noTele.length?`<b style="color:var(--terra)">Sin ningún día remoto (${noTele.length} personas):</b><br>${noTele.map(e=>`<div style="font-size:11px;padding:4px 8px;background:var(--terra-light);border-radius:5px;margin:2px 0"><b>${e.name}</b> · ${e.dept} · Índice: ${e.index}/100</div>`).join('')}<br>`:''}
+💡 Empleados sin teletrabajo en zona crítica muestran índice medio ${Math.round(noTele.reduce((s,e)=>s+e.index,0)/(noTele.length||1))}/100 vs ${Math.round(employees.filter(e=>e.metrics.teletrabajo>=3).reduce((s,e)=>s+e.index,0)/(employees.filter(e=>e.metrics.teletrabajo>=3).length||1))}/100 en empleados con ≥3 días remotos.`;
+  }
+
+  // ── Predicción / forecast ──
+  if(q.includes('predicción')||q.includes('baja')||q.includes('forecast')||q.includes('prevision')){
+    const highRisk=employees.filter(e=>e.risk>=70);
+    return `<b>🔮 Predicción BURNOFF-AI — Próximas 8 semanas</b><br><br>
+<div style="padding:10px;background:var(--terra-light);border-radius:8px;margin-bottom:8px">
+  <b style="color:var(--terra)">Riesgo de baja laboral ALTO:</b><br>
+  ${highRisk.map(e=>`<div style="font-size:11px;margin:3px 0">• <b>${e.name}</b> (${e.dept}) — ${e.risk}% probabilidad en 4 semanas</div>`).join('')}
+</div>
+<div style="padding:10px;background:var(--amber-light);border-radius:8px;margin-bottom:8px">
+  <b style="color:var(--amber)">Coste estimado por baja:</b><br>
+  <div style="font-size:12px;margin-top:4px">• Baja técnica (1 mes): <b>€3.500–8.000</b> por persona<br>• Rotación + sustitución: <b>€15.000–25.000</b> por persona<br>• Con ${highRisk.length} empleados críticos: riesgo total <b>€${(highRisk.length*18000).toLocaleString()}</b></div>
+</div>
+💡 Con intervención BURNOFF-AI ahora, reducción estimada del 73% del riesgo.`;
+  }
+
+  // ── Default fallback ──
+  return `No he encontrado una respuesta específica para "<b>${input.slice(0,50)}</b>".<br><br>
+Intenta preguntarme sobre:<br>
+• Nombre de empleado: <i>"Briefing de Ana García"</i><br>
+• Riesgos: <i>"¿Quién tiene mayor riesgo de burnout?"</i><br>
+• Departamentos: <i>"Compara todos los departamentos"</i><br>
+• Métricas: <i>"¿Cuál es el índice medio de la empresa?"</i><br>
+• Predicciones: <i>"Predicción de bajas próximas semanas"</i>`;
+}
+
+function generateEmpBriefing(e){
+  const trendDir=e.trend[7]>e.trend[0]?'↑ Mejorando':e.trend[7]<e.trend[0]-3?'↓ Decreciendo':'→ Estable';
+  const riskColor=e.risk>=70?'var(--terra)':e.risk>=40?'var(--amber)':'var(--green)';
+  return `<b>📋 BRIEFING · ${e.name}</b>
+<div style="display:flex;gap:6px;flex-wrap:wrap;margin:6px 0">
+  <span class="status-badge ${statusBadgeClass(e.status)}" style="font-size:10px">${statusLabel(e.status)}</span>
+  <span class="risk-pill ${riskClass(e.risk)}" style="font-size:10px">Riesgo ${riskLabel(e.risk)}: ${e.risk}%</span>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:5px;margin:8px 0">
+  <div style="padding:8px;background:rgba(0,0,0,.04);border-radius:6px;text-align:center">
+    <div style="font-size:20px;font-weight:700;color:${idxColor(e.index)}">${e.index}</div>
+    <div style="font-size:9px;color:var(--ink3)">Índice bienestar</div>
+  </div>
+  <div style="padding:8px;background:rgba(0,0,0,.04);border-radius:6px;text-align:center">
+    <div style="font-size:20px;font-weight:700;color:${riskColor}">${e.risk}%</div>
+    <div style="font-size:9px;color:var(--ink3)">Riesgo burnout</div>
+  </div>
+</div>
+<div style="font-size:11px;margin-bottom:8px"><b>${e.role}</b> · ${e.dept} · ${e.age} años<br>
+Tendencia: <b>${trendDir}</b> (${e.trend[0]} → ${e.trend[7]})</div>
+<b>📊 Métricas:</b>
+<div style="background:rgba(0,0,0,.04);border-radius:6px;padding:8px;margin:5px 0">
+${[['Horas extra/día',e.metrics.horasExtra+'h',e.metrics.horasExtra>3?'terra':e.metrics.horasExtra>1?'amber':'green'],
+   ['Reuniones/día',e.metrics.reuniones,e.metrics.reuniones>6?'terra':e.metrics.reuniones>4?'amber':'green'],
+   ['Carga trabajo',e.metrics.cargaTareas+'%',e.metrics.cargaTareas>130?'terra':e.metrics.cargaTareas>100?'amber':'green'],
+   ['Productividad',e.metrics.productividad+'%',e.metrics.productividad<40?'terra':e.metrics.productividad<65?'amber':'green'],
+   ['Teletrabajo',e.metrics.teletrabajo+' días/sem','green']
+].map(([k,v,c])=>`<div style="display:flex;justify-content:space-between;padding:2px 0;border-bottom:1px solid rgba(0,0,0,.05);font-size:10px">
+  <span style="color:var(--ink3)">${k}</span>
+  <span style="font-weight:600;color:var(--${c})">${v}</span>
+</div>`).join('')}
+</div>
+<b>🔍 Señales:</b><br>
+${e.signals.map(s=>`<div style="font-size:10px;padding:4px 0;color:var(--ink2)">• ${s.icon} ${s.text}</div>`).join('')}
+<br><div style="padding:8px;background:${e.risk>=70?'var(--terra-light)':e.risk>=40?'var(--amber-light)':'var(--green-light)'};border-radius:6px;font-size:11px">
+<b>🤖 Recomendación:</b> ${e.risk>=70?`Intervención urgente. Riesgo de baja en 4–6 semanas. Conversación RRHH + reducción carga inmediata.`:e.risk>=40?`Seguimiento activo. Check-in 1:1 con manager y revisión reuniones en 2 semanas.`:`Indicadores positivos. Mantener condiciones y continuar seguimiento mensual.`}
+</div>`;
+}
 
 
 // end of script
@@ -3034,5 +3472,42 @@ function ceoViewAnalitica(){
   </div>
 </div>
 
+
+<!-- ═══════════════════════════════════════════════════
+     AI ASSISTANT PANEL
+═══════════════════════════════════════════════════ -->
+<div id="ai-overlay" class="ai-overlay" onclick="closeAIPanel()"></div>
+<div id="ai-panel" class="ai-panel">
+  <div class="ai-panel-header">
+    <div>
+      <div class="ai-panel-title">🤖 BURNOFF-AI Asistente</div>
+      <div class="ai-panel-sub">DATOS EN TIEMPO REAL · 25 EMPLEADOS</div>
+    </div>
+    <div class="ai-close-btn" onclick="closeAIPanel()">✕</div>
+  </div>
+  <div id="ai-messages" class="ai-messages">
+    <div style="text-align:center;color:var(--ink4);padding:40px 20px;font-size:12px">
+      Escribe una pregunta o usa los accesos rápidos de abajo
+    </div>
+  </div>
+  <div class="ai-quick-chips">
+    <div style="width:100%;font-size:10px;font-weight:600;color:var(--ink3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px">Accesos rápidos</div>
+    <div class="ai-quick-chip" onclick="handleAIQuickAction('Resumen global de la empresa')">🏢 Resumen empresa</div>
+    <div class="ai-quick-chip" onclick="handleAIQuickAction('¿Quién tiene mayor riesgo de burnout?')">🚨 Top riesgo</div>
+    <div class="ai-quick-chip" onclick="handleAIQuickAction('Compara todos los departamentos')">📊 Comparar depts</div>
+    <div class="ai-quick-chip" onclick="handleAIQuickAction('Briefing de Elena Vidal')">📋 Briefing crítico</div>
+    <div class="ai-quick-chip" onclick="handleAIQuickAction('¿Quién tiene mejor bienestar?')">🌿 Top bienestar</div>
+    <div class="ai-quick-chip" onclick="handleAIQuickAction('Análisis de horas extra')">🕐 Horas extra</div>
+    <div class="ai-quick-chip" onclick="handleAIQuickAction('Predicción de bajas próximas semanas')">🔮 Predicción bajas</div>
+    <div class="ai-quick-chip" onclick="handleAIQuickAction('Análisis de reuniones y meeting fatigue')">📅 Reuniones</div>
+    <div class="ai-quick-chip" onclick="handleAIQuickAction('Briefing de Camila Rodríguez')">⭐ Mejor empleada</div>
+    <div class="ai-quick-chip" onclick="handleAIQuickAction('Análisis de productividad')">📈 Productividad</div>
+    <div class="ai-quick-chip" onclick="handleAIQuickAction('Teletrabajo y trabajo remoto')">🏠 Teletrabajo</div>
+  </div>
+  <div class="ai-input-row">
+    <input id="ai-input" class="ai-input" type="text" placeholder="Pregunta sobre métricas, empleados, departamentos..." onkeydown="aiInputKeydown(event)">
+    <div class="ai-send-btn" onclick="sendAIMessage()">➤</div>
+  </div>
+</div>
 </body>
 </html>
